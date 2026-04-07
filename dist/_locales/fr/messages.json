@@ -1,0 +1,584 @@
+{
+  "bg_style_aurora": {
+    "message": "Aurora night"
+  },
+  "bg_style_sunset": {
+    "message": "Sunset glow"
+  },
+  "bg_style_emerald": {
+    "message": "Emerald forest"
+  },
+  "bg_style_rose": {
+    "message": "Rose mist"
+  },
+  "bg_style_electric": {
+    "message": "Electric violet"
+  },
+  "bg_style_lava": {
+    "message": "Lava red"
+  },
+  "bg_style_mist": {
+    "message": "Purple mist"
+  },
+  "bg_style_lime": {
+    "message": "Lime burst"
+  },
+  "bg_style_cobalt": {
+    "message": "Deep cobalt"
+  },
+  "bg_style_daySpring": {
+    "message": "Spring dawn"
+  },
+  "bg_style_peachGlow": {
+    "message": "Peach soda"
+  },
+  "bg_style_lemonFizz": {
+    "message": "Lemon fizz"
+  },
+  "bg_style_mintIce": {
+    "message": "Mint frappe"
+  },
+  "bg_style_lavenderAir": {
+    "message": "Lavender breeze"
+  },
+  "bg_style_aquaPop": {
+    "message": "Sky soda"
+  },
+  "bg_style_candyFloss": {
+    "message": "Cotton candy"
+  },
+  "bg_solid_linen": {
+    "message": "Linen paper"
+  },
+  "bg_solid_cloud": {
+    "message": "Cloud white"
+  },
+  "bg_solid_ocean": {
+    "message": "Deep ocean"
+  },
+  "bg_solid_midnight": {
+    "message": "Midnight slate"
+  },
+  "bg_solid_ink": {
+    "message": "Ink black"
+  },
+  "bg_solid_blossom": {
+    "message": "Cherry blossom"
+  },
+  "bg_solid_mint": {
+    "message": "Mint"
+  },
+  "bg_solid_amber": {
+    "message": "Amber"
+  },
+  "bg_solid_daffodil": {
+    "message": "Daffodil"
+  },
+  "bg_solid_shellPink": {
+    "message": "Shell pink"
+  },
+  "bg_solid_iceBlue": {
+    "message": "Glacier blue"
+  },
+  "bg_solid_sprout": {
+    "message": "Sprout green"
+  },
+  "bg_solid_wisteria": {
+    "message": "Soft wisteria"
+  },
+  "bg_solid_sand": {
+    "message": "Warm sand"
+  },
+  "bg_solid_powder": {
+    "message": "Mist pink"
+  },
+  "bg_solid_custom": {
+    "message": "Custom"
+  },
+  "bg_tex_mesh1": {
+    "message": "Mesh glow"
+  },
+  "bg_tex_mesh2": {
+    "message": "Dual mesh"
+  },
+  "bg_tex_noise": {
+    "message": "Fine noise"
+  },
+  "bg_tex_stripes": {
+    "message": "Stripes"
+  },
+  "bg_tex_dots": {
+    "message": "Dot grid"
+  },
+  "bg_tex_softAurora": {
+    "message": "Soft aurora"
+  },
+  "bg_tex_softSunset": {
+    "message": "Soft sunset"
+  },
+  "bg_tex_grid": {
+    "message": "Grid lines"
+  },
+  "bg_tex_waves": {
+    "message": "Waves"
+  },
+  "bg_tex_pastelMesh": {
+    "message": "Candy mesh"
+  },
+  "bg_tex_sunSpeckle": {
+    "message": "Sun speckle"
+  },
+  "bg_tex_chalkLines": {
+    "message": "Pastel lines"
+  },
+  "bg_tex_bubbleField": {
+    "message": "Bubbles"
+  },
+  "bg_tex_springBloom": {
+    "message": "Spring bloom"
+  },
+  "bg_tex_citrusSlice": {
+    "message": "Citrus slice"
+  },
+  "bg_tex_aquaRipple": {
+    "message": "Aqua ripple"
+  },
+  "bg_tex_bearGrid": {
+    "message": "Bear grid"
+  },
+  "extName": {
+    "message": "Showcase Capture Studio",
+    "description": "Extension name shown in Chrome"
+  },
+  "extDescription": {
+    "message": "Capturez des onglets, ajoutez fonds et texte, exportez formats promo (440×280, 1280×800, HD).",
+    "description": "Short description for the Chrome Web Store and extensions page"
+  },
+  "extActionTitle": {
+    "message": "Capturer l’onglet et ouvrir l’éditeur",
+    "description": "Tooltip for the toolbar button"
+  },
+  "editorTitle": {
+    "message": "BrandStudio"
+  },
+  "brandName": {
+    "message": "BrandStudio"
+  },
+  "studio_badge": {
+    "message": "Studio"
+  },
+  "err_screenshot_load": {
+    "message": "Échec du chargement de la capture"
+  },
+  "msg_tab_capture_loaded": {
+    "message": "Capture de la barre d’outils chargée"
+  },
+  "err_pick_image_file": {
+    "message": "Choisissez un fichier image"
+  },
+  "msg_bg_upload_applied": {
+    "message": "Arrière-plan personnalisé appliqué"
+  },
+  "export_filename_prefix": {
+    "message": "showcase-capture"
+  },
+  "msg_exported": {
+    "message": "Exporté : $1"
+  },
+  "err_export_failed": {
+    "message": "Échec de l’export"
+  },
+  "msg_settings_reset": {
+    "message": "Paramètres par défaut (capture conservée)"
+  },
+  "err_screenshot_required_first": {
+    "message": "Chargez d’abord une capture"
+  },
+  "err_preview_failed": {
+    "message": "Échec de l’aperçu"
+  },
+  "err_capture_tab": {
+    "message": "Échec de la capture (pages restreintes comme chrome:// ou le store ne sont pas capturables)"
+  },
+  "zoom_out": {
+    "message": "Zoom arrière"
+  },
+  "zoom_in": {
+    "message": "Zoom avant"
+  },
+  "zoom_fit": {
+    "message": "Ajuster"
+  },
+  "sr_canvas_preset": {
+    "message": "Préréglage toile"
+  },
+  "export_size_thumb": {
+    "message": "Miniature 440 × 280"
+  },
+  "export_size_standard": {
+    "message": "Chrome Web Store 1280 × 800"
+  },
+  "export_size_large": {
+    "message": "Grand 1920 × 1080"
+  },
+  "export_size_custom": {
+    "message": "Taille personnalisée"
+  },
+  "export_custom_dims": {
+    "message": "Personnalisé $1 × $2"
+  },
+  "aria_history": {
+    "message": "History"
+  },
+  "undo": {
+    "message": "Annuler"
+  },
+  "redo": {
+    "message": "Rétablir"
+  },
+  "clear_workspace": {
+    "message": "Réinitialiser"
+  },
+  "preview": {
+    "message": "Aperçu"
+  },
+  "export": {
+    "message": "Exporter"
+  },
+  "exporting": {
+    "message": "Export…"
+  },
+  "nav_layout": {
+    "message": "Mise en page"
+  },
+  "nav_bg": {
+    "message": "Arrière-plan"
+  },
+  "nav_copy": {
+    "message": "Texte"
+  },
+  "nav_arrows": {
+    "message": "Arrows"
+  },
+  "arrows_heading": {
+    "message": "Arrows"
+  },
+  "arrows_hint_draw": {
+    "message": "Drag on the preview to draw an arrow, or add one with a default position."
+  },
+  "arrows_add_default": {
+    "message": "Add arrow"
+  },
+  "arrows_head_style_label": {
+    "message": "Arrow head"
+  },
+  "arrows_head_style_hint": {
+    "message": "Shape at the tip (icons match the style)."
+  },
+  "arrows_line_style_label": {
+    "message": "Line style"
+  },
+  "arrows_line_style_hint": {
+    "message": "Straight, dashed, double, or curved shaft."
+  },
+  "arrows_color": {
+    "message": "Color"
+  },
+  "arrows_width": {
+    "message": "Stroke weight"
+  },
+  "arrows_opacity": {
+    "message": "Opacity"
+  },
+  "arrows_list": {
+    "message": "On canvas"
+  },
+  "arrows_item": {
+    "message": "Arrow"
+  },
+  "arrows_delete": {
+    "message": "Delete selected"
+  },
+  "arrow_head_triangle": {
+    "message": "Filled triangle"
+  },
+  "arrow_head_barbed": {
+    "message": "Barbed / stealth"
+  },
+  "arrow_head_chevron": {
+    "message": "Open chevron"
+  },
+  "arrow_head_outline": {
+    "message": "Outlined triangle"
+  },
+  "arrow_head_compact": {
+    "message": "Compact solid"
+  },
+  "arrow_line_straight": {
+    "message": "Solid line"
+  },
+  "arrow_line_dashed": {
+    "message": "Dashed line"
+  },
+  "arrow_line_double": {
+    "message": "Double line"
+  },
+  "arrow_line_curved": {
+    "message": "Curved line"
+  },
+  "undo_shortcut_hint": {
+    "message": "Undo (⌘/Ctrl+Z)"
+  },
+  "redo_shortcut_hint": {
+    "message": "Redo (⌘/Ctrl+Shift+Z or Ctrl+Y)"
+  },
+  "theme_to_light": {
+    "message": "Thème clair"
+  },
+  "theme_to_dark": {
+    "message": "Thème sombre"
+  },
+  "hint_canvas_before": {
+    "message": "Sur l’onglet de la "
+  },
+  "hint_canvas_emphasis": {
+    "message": "page cible"
+  },
+  "hint_canvas_after": {
+    "message": ", cliquez sur l’icône pour actualiser. Aperçu ($1)."
+  },
+  "canvas_empty_title": {
+    "message": "Pas encore de capture"
+  },
+  "canvas_empty_hint": {
+    "message": "Ouvrez une page et cliquez sur l’icône de l’extension"
+  },
+  "aria_editor_menu": {
+    "message": "Editor menu"
+  },
+  "aria_props": {
+    "message": "Properties"
+  },
+  "layout_heading": {
+    "message": "Mise en page"
+  },
+  "show_grid": {
+    "message": "Grille"
+  },
+  "layout_embed_browser": {
+    "message": "Embed browser frame"
+  },
+  "layout_embed_browser_hint": {
+    "message": "Draws browser-style chrome (tab strip, address bar, and viewport) around the screenshot area."
+  },
+  "layout_browser_chrome_color": {
+    "message": "Frame color"
+  },
+  "custom_export_dims_heading": {
+    "message": "Taille d’export"
+  },
+  "custom_export_dims_hint": {
+    "message": "Utilisé si « Taille personnalisée » est sélectionné en haut."
+  },
+  "dim_width": {
+    "message": "Largeur"
+  },
+  "dim_height": {
+    "message": "Hauteur"
+  },
+  "layout_split_text_left_name": {
+    "message": "Split · texte gauche"
+  },
+  "layout_split_text_left_desc": {
+    "message": "Texte à gauche, capture à droite"
+  },
+  "layout_split_text_right_name": {
+    "message": "Split · texte droite"
+  },
+  "layout_split_text_right_desc": {
+    "message": "Capture à gauche, texte à droite"
+  },
+  "layout_centered_text_top_name": {
+    "message": "Bandeau · haut"
+  },
+  "layout_centered_text_top_desc": {
+    "message": "Texte en haut, capture en bas"
+  },
+  "layout_centered_text_bottom_name": {
+    "message": "Bandeau · bas"
+  },
+  "layout_centered_text_bottom_desc": {
+    "message": "Capture en haut, texte en bas"
+  },
+  "layout_bleed_full_name": {
+    "message": "Plein cadre"
+  },
+  "layout_bleed_full_desc": {
+    "message": "La capture remplit la toile"
+  },
+  "layout_split_narrow_left_name": {
+    "message": "Colonne · gauche"
+  },
+  "layout_split_narrow_left_desc": {
+    "message": "Colonne texte étroite à gauche"
+  },
+  "layout_split_narrow_right_name": {
+    "message": "Colonne · droite"
+  },
+  "layout_split_narrow_right_desc": {
+    "message": "Colonne texte étroite à droite"
+  },
+  "layout_stack_compact_top_name": {
+    "message": "Barre sup. compacte"
+  },
+  "layout_stack_compact_top_desc": {
+    "message": "Fine barre de texte, image plus grande"
+  },
+  "props_bg_heading": {
+    "message": "Arrière-plan"
+  },
+  "bg_cat_style": {
+    "message": "Dégradés"
+  },
+  "bg_cat_image": {
+    "message": "Textures"
+  },
+  "bg_cat_solid": {
+    "message": "Uni"
+  },
+  "bg_section_gradients": {
+    "message": "Dégradés et couleur"
+  },
+  "bg_section_builtin": {
+    "message": "Textures intégrées"
+  },
+  "bg_section_upload": {
+    "message": "Téléversement"
+  },
+  "bg_upload_hint": {
+    "message": "Le téléversement remplace les textures jusqu’à suppression."
+  },
+  "upload_bg_image": {
+    "message": "Téléverser une image"
+  },
+  "clear_upload": {
+    "message": "Effacer le fichier"
+  },
+  "bg_section_presets": {
+    "message": "Préréglages"
+  },
+  "custom_color": {
+    "message": "Couleur perso."
+  },
+  "copy_heading": {
+    "message": "Texte"
+  },
+  "copy_hint_long": {
+    "message": "Saisissez sur la toile ou ici. Changer la mise en page réaligne les blocs. Glisser sur les bords ; largeur en bas à droite."
+  },
+  "role_title": {
+    "message": "Titre"
+  },
+  "role_subtitle": {
+    "message": "Sous-titre"
+  },
+  "field_copy": {
+    "message": "Texte"
+  },
+  "copy_placeholder": {
+    "message": "ex. Bloquez les pubs avec des règles…"
+  },
+  "color": {
+    "message": "Couleur"
+  },
+  "font": {
+    "message": "Police"
+  },
+  "font_size_label": {
+    "message": "Taille $1"
+  },
+  "transparency_label": {
+    "message": "Transparence $1% (plus haut = plus transparent)"
+  },
+  "copy_align_label": {
+    "message": "Alignment"
+  },
+  "copy_align_left": {
+    "message": "Left"
+  },
+  "copy_align_center": {
+    "message": "Center"
+  },
+  "copy_align_right": {
+    "message": "Right"
+  },
+  "text_effects_heading": {
+    "message": "Effets"
+  },
+  "bold": {
+    "message": "Gras"
+  },
+  "preview_modal_title": {
+    "message": "Aperçu export ($1)"
+  },
+  "close": {
+    "message": "Fermer"
+  },
+  "preview_image_alt": {
+    "message": "Aperçu"
+  },
+  "drag_move": {
+    "message": "Déplacer"
+  },
+  "drag_resize_width": {
+    "message": "Redimensionner la largeur"
+  },
+  "ph_title": {
+    "message": "Titre"
+  },
+  "ph_subtitle": {
+    "message": "Sous-titre / description"
+  },
+  "font_system": {
+    "message": "System UI"
+  },
+  "font_notoSansSc": {
+    "message": "Noto Sans SC"
+  },
+  "font_lxgwWenkai": {
+    "message": "LXGW WenKai"
+  },
+  "font_zcoolKuaiLe": {
+    "message": "ZCOOL KuaiLe"
+  },
+  "font_maShanZheng": {
+    "message": "Ma Shan Zheng"
+  },
+  "text_fx_solid": {
+    "message": "Uni"
+  },
+  "text_fx_gradient": {
+    "message": "Dégradé"
+  },
+  "text_fx_metallic": {
+    "message": "Métallique"
+  },
+  "text_fx_crystal": {
+    "message": "Cristal"
+  },
+  "text_fx_neon": {
+    "message": "Néon"
+  },
+  "text_fx_outline": {
+    "message": "Contour"
+  },
+  "text_fx_emboss": {
+    "message": "Relief"
+  },
+  "text_fx_duotone": {
+    "message": "Bicolore"
+  },
+  "text_fx_shadowPop": {
+    "message": "Ombre 3D"
+  }
+}

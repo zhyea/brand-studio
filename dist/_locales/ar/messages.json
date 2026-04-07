@@ -1,0 +1,584 @@
+{
+  "bg_style_aurora": {
+    "message": "Aurora night"
+  },
+  "bg_style_sunset": {
+    "message": "Sunset glow"
+  },
+  "bg_style_emerald": {
+    "message": "Emerald forest"
+  },
+  "bg_style_rose": {
+    "message": "Rose mist"
+  },
+  "bg_style_electric": {
+    "message": "Electric violet"
+  },
+  "bg_style_lava": {
+    "message": "Lava red"
+  },
+  "bg_style_mist": {
+    "message": "Purple mist"
+  },
+  "bg_style_lime": {
+    "message": "Lime burst"
+  },
+  "bg_style_cobalt": {
+    "message": "Deep cobalt"
+  },
+  "bg_style_daySpring": {
+    "message": "Spring dawn"
+  },
+  "bg_style_peachGlow": {
+    "message": "Peach soda"
+  },
+  "bg_style_lemonFizz": {
+    "message": "Lemon fizz"
+  },
+  "bg_style_mintIce": {
+    "message": "Mint frappe"
+  },
+  "bg_style_lavenderAir": {
+    "message": "Lavender breeze"
+  },
+  "bg_style_aquaPop": {
+    "message": "Sky soda"
+  },
+  "bg_style_candyFloss": {
+    "message": "Cotton candy"
+  },
+  "bg_solid_linen": {
+    "message": "Linen paper"
+  },
+  "bg_solid_cloud": {
+    "message": "Cloud white"
+  },
+  "bg_solid_ocean": {
+    "message": "Deep ocean"
+  },
+  "bg_solid_midnight": {
+    "message": "Midnight slate"
+  },
+  "bg_solid_ink": {
+    "message": "Ink black"
+  },
+  "bg_solid_blossom": {
+    "message": "Cherry blossom"
+  },
+  "bg_solid_mint": {
+    "message": "Mint"
+  },
+  "bg_solid_amber": {
+    "message": "Amber"
+  },
+  "bg_solid_daffodil": {
+    "message": "Daffodil"
+  },
+  "bg_solid_shellPink": {
+    "message": "Shell pink"
+  },
+  "bg_solid_iceBlue": {
+    "message": "Glacier blue"
+  },
+  "bg_solid_sprout": {
+    "message": "Sprout green"
+  },
+  "bg_solid_wisteria": {
+    "message": "Soft wisteria"
+  },
+  "bg_solid_sand": {
+    "message": "Warm sand"
+  },
+  "bg_solid_powder": {
+    "message": "Mist pink"
+  },
+  "bg_solid_custom": {
+    "message": "Custom"
+  },
+  "bg_tex_mesh1": {
+    "message": "Mesh glow"
+  },
+  "bg_tex_mesh2": {
+    "message": "Dual mesh"
+  },
+  "bg_tex_noise": {
+    "message": "Fine noise"
+  },
+  "bg_tex_stripes": {
+    "message": "Stripes"
+  },
+  "bg_tex_dots": {
+    "message": "Dot grid"
+  },
+  "bg_tex_softAurora": {
+    "message": "Soft aurora"
+  },
+  "bg_tex_softSunset": {
+    "message": "Soft sunset"
+  },
+  "bg_tex_grid": {
+    "message": "Grid lines"
+  },
+  "bg_tex_waves": {
+    "message": "Waves"
+  },
+  "bg_tex_pastelMesh": {
+    "message": "Candy mesh"
+  },
+  "bg_tex_sunSpeckle": {
+    "message": "Sun speckle"
+  },
+  "bg_tex_chalkLines": {
+    "message": "Pastel lines"
+  },
+  "bg_tex_bubbleField": {
+    "message": "Bubbles"
+  },
+  "bg_tex_springBloom": {
+    "message": "Spring bloom"
+  },
+  "bg_tex_citrusSlice": {
+    "message": "Citrus slice"
+  },
+  "bg_tex_aquaRipple": {
+    "message": "Aqua ripple"
+  },
+  "bg_tex_bearGrid": {
+    "message": "Bear grid"
+  },
+  "extName": {
+    "message": "Showcase Capture Studio",
+    "description": "Extension name shown in Chrome"
+  },
+  "extDescription": {
+    "message": "التقاط علامات التبويب وإضافة خلفيات ونص وتصدير أحجام ترويجية (440×280، 1280×800، HD).",
+    "description": "Short description for the Chrome Web Store and extensions page"
+  },
+  "extActionTitle": {
+    "message": "التقاط التبويب وفتح المحرر",
+    "description": "Tooltip for the toolbar button"
+  },
+  "editorTitle": {
+    "message": "BrandStudio"
+  },
+  "brandName": {
+    "message": "BrandStudio"
+  },
+  "studio_badge": {
+    "message": "Studio"
+  },
+  "err_screenshot_load": {
+    "message": "تعذر تحميل لقطة الشاشة"
+  },
+  "msg_tab_capture_loaded": {
+    "message": "تم تحميل اللقطة من شريط الأدوات"
+  },
+  "err_pick_image_file": {
+    "message": "يرجى اختيار ملف صورة"
+  },
+  "msg_bg_upload_applied": {
+    "message": "تم تطبيق الخلفية المخصصة"
+  },
+  "export_filename_prefix": {
+    "message": "showcase-capture"
+  },
+  "msg_exported": {
+    "message": "تم التصدير: $1"
+  },
+  "err_export_failed": {
+    "message": "فشل التصدير"
+  },
+  "msg_settings_reset": {
+    "message": "استعادة الافتراضي (اللقطة محفوظة)"
+  },
+  "err_screenshot_required_first": {
+    "message": "حمّل لقطة أولاً"
+  },
+  "err_preview_failed": {
+    "message": "فشل المعاينة"
+  },
+  "err_capture_tab": {
+    "message": "فشل الالتقاط (صفحات مثل chrome:// أو المتجر غير مدعومة)"
+  },
+  "zoom_out": {
+    "message": "تصغير"
+  },
+  "zoom_in": {
+    "message": "تكبير"
+  },
+  "zoom_fit": {
+    "message": "ملاءمة"
+  },
+  "sr_canvas_preset": {
+    "message": "إعداد اللوحة"
+  },
+  "export_size_thumb": {
+    "message": "صورة مصغّرة 440 × 280"
+  },
+  "export_size_standard": {
+    "message": "متجر Chrome 1280 × 800"
+  },
+  "export_size_large": {
+    "message": "كبير 1920 × 1080"
+  },
+  "export_size_custom": {
+    "message": "حجم مخصص"
+  },
+  "export_custom_dims": {
+    "message": "مخصص $1 × $2"
+  },
+  "aria_history": {
+    "message": "History"
+  },
+  "undo": {
+    "message": "تراجع"
+  },
+  "redo": {
+    "message": "إعادة"
+  },
+  "clear_workspace": {
+    "message": "إعادة تعيين"
+  },
+  "preview": {
+    "message": "معاينة"
+  },
+  "export": {
+    "message": "تصدير"
+  },
+  "exporting": {
+    "message": "جارٍ التصدير…"
+  },
+  "nav_layout": {
+    "message": "التخطيط"
+  },
+  "nav_bg": {
+    "message": "الخلفية"
+  },
+  "nav_copy": {
+    "message": "النص"
+  },
+  "nav_arrows": {
+    "message": "Arrows"
+  },
+  "arrows_heading": {
+    "message": "Arrows"
+  },
+  "arrows_hint_draw": {
+    "message": "Drag on the preview to draw an arrow, or add one with a default position."
+  },
+  "arrows_add_default": {
+    "message": "Add arrow"
+  },
+  "arrows_head_style_label": {
+    "message": "Arrow head"
+  },
+  "arrows_head_style_hint": {
+    "message": "Shape at the tip (icons match the style)."
+  },
+  "arrows_line_style_label": {
+    "message": "Line style"
+  },
+  "arrows_line_style_hint": {
+    "message": "Straight, dashed, double, or curved shaft."
+  },
+  "arrows_color": {
+    "message": "Color"
+  },
+  "arrows_width": {
+    "message": "Stroke weight"
+  },
+  "arrows_opacity": {
+    "message": "Opacity"
+  },
+  "arrows_list": {
+    "message": "On canvas"
+  },
+  "arrows_item": {
+    "message": "Arrow"
+  },
+  "arrows_delete": {
+    "message": "Delete selected"
+  },
+  "arrow_head_triangle": {
+    "message": "Filled triangle"
+  },
+  "arrow_head_barbed": {
+    "message": "Barbed / stealth"
+  },
+  "arrow_head_chevron": {
+    "message": "Open chevron"
+  },
+  "arrow_head_outline": {
+    "message": "Outlined triangle"
+  },
+  "arrow_head_compact": {
+    "message": "Compact solid"
+  },
+  "arrow_line_straight": {
+    "message": "Solid line"
+  },
+  "arrow_line_dashed": {
+    "message": "Dashed line"
+  },
+  "arrow_line_double": {
+    "message": "Double line"
+  },
+  "arrow_line_curved": {
+    "message": "Curved line"
+  },
+  "undo_shortcut_hint": {
+    "message": "Undo (⌘/Ctrl+Z)"
+  },
+  "redo_shortcut_hint": {
+    "message": "Redo (⌘/Ctrl+Shift+Z or Ctrl+Y)"
+  },
+  "theme_to_light": {
+    "message": "سمة فاتحة"
+  },
+  "theme_to_dark": {
+    "message": "سمة داكنة"
+  },
+  "hint_canvas_before": {
+    "message": "في تبويب "
+  },
+  "hint_canvas_emphasis": {
+    "message": "الصفحة المستهدفة"
+  },
+  "hint_canvas_after": {
+    "message": "، انقر أيقونة الامتداد للتحديث. معاينة اللوحة ($1)."
+  },
+  "canvas_empty_title": {
+    "message": "لا توجد لقطة"
+  },
+  "canvas_empty_hint": {
+    "message": "افتح صفحة ويب وانقر أيقونة الامتداد"
+  },
+  "aria_editor_menu": {
+    "message": "Editor menu"
+  },
+  "aria_props": {
+    "message": "Properties"
+  },
+  "layout_heading": {
+    "message": "التخطيط"
+  },
+  "show_grid": {
+    "message": "إظهار الشبكة"
+  },
+  "layout_embed_browser": {
+    "message": "Embed browser frame"
+  },
+  "layout_embed_browser_hint": {
+    "message": "Draws browser-style chrome (tab strip, address bar, and viewport) around the screenshot area."
+  },
+  "layout_browser_chrome_color": {
+    "message": "Frame color"
+  },
+  "custom_export_dims_heading": {
+    "message": "حجم التصدير"
+  },
+  "custom_export_dims_hint": {
+    "message": "يُستخدم عند اختيار «حجم مخصص» في الأعلى."
+  },
+  "dim_width": {
+    "message": "العرض"
+  },
+  "dim_height": {
+    "message": "الارتفاع"
+  },
+  "layout_split_text_left_name": {
+    "message": "تقسيم · نص يسار"
+  },
+  "layout_split_text_left_desc": {
+    "message": "نص يسار، لقطة يمين"
+  },
+  "layout_split_text_right_name": {
+    "message": "تقسيم · نص يمين"
+  },
+  "layout_split_text_right_desc": {
+    "message": "لقطة يسار، نص يمين"
+  },
+  "layout_centered_text_top_name": {
+    "message": "شريط · أعلى"
+  },
+  "layout_centered_text_top_desc": {
+    "message": "نص أعلى، لقطة أسفل"
+  },
+  "layout_centered_text_bottom_name": {
+    "message": "شريط · أسفل"
+  },
+  "layout_centered_text_bottom_desc": {
+    "message": "لقطة أعلى، نص أسفل"
+  },
+  "layout_bleed_full_name": {
+    "message": "ملء كامل"
+  },
+  "layout_bleed_full_desc": {
+    "message": "اللقطة تملأ اللوحة"
+  },
+  "layout_split_narrow_left_name": {
+    "message": "عمود · يسار"
+  },
+  "layout_split_narrow_left_desc": {
+    "message": "عمود نص ضيق يساراً"
+  },
+  "layout_split_narrow_right_name": {
+    "message": "عمود · يمين"
+  },
+  "layout_split_narrow_right_desc": {
+    "message": "عمود نص ضيق يميناً"
+  },
+  "layout_stack_compact_top_name": {
+    "message": "شريط علوي"
+  },
+  "layout_stack_compact_top_desc": {
+    "message": "شريط نص رفيع، صورة أكبر"
+  },
+  "props_bg_heading": {
+    "message": "الخلفية"
+  },
+  "bg_cat_style": {
+    "message": "تدرجات"
+  },
+  "bg_cat_image": {
+    "message": "نسيج"
+  },
+  "bg_cat_solid": {
+    "message": "لون واحد"
+  },
+  "bg_section_gradients": {
+    "message": "تدرجات ولون"
+  },
+  "bg_section_builtin": {
+    "message": "أنسجة مدمجة"
+  },
+  "bg_section_upload": {
+    "message": "رفع"
+  },
+  "bg_upload_hint": {
+    "message": "الرفع يستبدل الأنسجة حتى المسح."
+  },
+  "upload_bg_image": {
+    "message": "رفع صورة"
+  },
+  "clear_upload": {
+    "message": "مسح الرفع"
+  },
+  "bg_section_presets": {
+    "message": "إعدادات مسبقة"
+  },
+  "custom_color": {
+    "message": "لون مخصص"
+  },
+  "copy_heading": {
+    "message": "النص"
+  },
+  "copy_hint_long": {
+    "message": "اكتب على اللوحة أو هنا. تغيير التخطيط يعيد محاذاة الصناديق. اسحب من الحواف؛ العرض من أسفل اليمين."
+  },
+  "role_title": {
+    "message": "العنوان"
+  },
+  "role_subtitle": {
+    "message": "العنوان الفرعي"
+  },
+  "field_copy": {
+    "message": "النص"
+  },
+  "copy_placeholder": {
+    "message": "مثال: حظر الإعلانات بقواعد…"
+  },
+  "color": {
+    "message": "اللون"
+  },
+  "font": {
+    "message": "الخط"
+  },
+  "font_size_label": {
+    "message": "الحجم $1"
+  },
+  "transparency_label": {
+    "message": "الشفافية $1٪ (أعلى = أكثر شفافية)"
+  },
+  "copy_align_label": {
+    "message": "Alignment"
+  },
+  "copy_align_left": {
+    "message": "Left"
+  },
+  "copy_align_center": {
+    "message": "Center"
+  },
+  "copy_align_right": {
+    "message": "Right"
+  },
+  "text_effects_heading": {
+    "message": "التأثيرات"
+  },
+  "bold": {
+    "message": "عريض"
+  },
+  "preview_modal_title": {
+    "message": "معاينة التصدير ($1)"
+  },
+  "close": {
+    "message": "إغلاق"
+  },
+  "preview_image_alt": {
+    "message": "معاينة"
+  },
+  "drag_move": {
+    "message": "سحب"
+  },
+  "drag_resize_width": {
+    "message": "تغيير العرض"
+  },
+  "ph_title": {
+    "message": "العنوان"
+  },
+  "ph_subtitle": {
+    "message": "عنوان فرعي / وصف"
+  },
+  "font_system": {
+    "message": "System UI"
+  },
+  "font_notoSansSc": {
+    "message": "Noto Sans SC"
+  },
+  "font_lxgwWenkai": {
+    "message": "LXGW WenKai"
+  },
+  "font_zcoolKuaiLe": {
+    "message": "ZCOOL KuaiLe"
+  },
+  "font_maShanZheng": {
+    "message": "Ma Shan Zheng"
+  },
+  "text_fx_solid": {
+    "message": "لون واحد"
+  },
+  "text_fx_gradient": {
+    "message": "تدرج"
+  },
+  "text_fx_metallic": {
+    "message": "معدني"
+  },
+  "text_fx_crystal": {
+    "message": "بلوري"
+  },
+  "text_fx_neon": {
+    "message": "نيون"
+  },
+  "text_fx_outline": {
+    "message": "حدود"
+  },
+  "text_fx_emboss": {
+    "message": "بارز"
+  },
+  "text_fx_duotone": {
+    "message": "لونان"
+  },
+  "text_fx_shadowPop": {
+    "message": "ظل ثلاثي"
+  }
+}

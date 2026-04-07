@@ -1,0 +1,24 @@
+{
+  "name": "showcase-capture-extension",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "node scripts/generate-locales.cjs && vite build && vite build -c vite.background.config.ts",
+    "locales": "node scripts/generate-locales.cjs",
+    "gen-zh-tw": "node scripts/gen-zh-tw.mjs",
+    "icons": "python3 scripts/build-extension-icons.py"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.287",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "opencc-js": "^1.0.5",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vue-tsc": "^2.1.10"
+  }
+}

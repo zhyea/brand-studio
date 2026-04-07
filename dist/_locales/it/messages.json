@@ -1,0 +1,584 @@
+{
+  "bg_style_aurora": {
+    "message": "Aurora night"
+  },
+  "bg_style_sunset": {
+    "message": "Sunset glow"
+  },
+  "bg_style_emerald": {
+    "message": "Emerald forest"
+  },
+  "bg_style_rose": {
+    "message": "Rose mist"
+  },
+  "bg_style_electric": {
+    "message": "Electric violet"
+  },
+  "bg_style_lava": {
+    "message": "Lava red"
+  },
+  "bg_style_mist": {
+    "message": "Purple mist"
+  },
+  "bg_style_lime": {
+    "message": "Lime burst"
+  },
+  "bg_style_cobalt": {
+    "message": "Deep cobalt"
+  },
+  "bg_style_daySpring": {
+    "message": "Spring dawn"
+  },
+  "bg_style_peachGlow": {
+    "message": "Peach soda"
+  },
+  "bg_style_lemonFizz": {
+    "message": "Lemon fizz"
+  },
+  "bg_style_mintIce": {
+    "message": "Mint frappe"
+  },
+  "bg_style_lavenderAir": {
+    "message": "Lavender breeze"
+  },
+  "bg_style_aquaPop": {
+    "message": "Sky soda"
+  },
+  "bg_style_candyFloss": {
+    "message": "Cotton candy"
+  },
+  "bg_solid_linen": {
+    "message": "Linen paper"
+  },
+  "bg_solid_cloud": {
+    "message": "Cloud white"
+  },
+  "bg_solid_ocean": {
+    "message": "Deep ocean"
+  },
+  "bg_solid_midnight": {
+    "message": "Midnight slate"
+  },
+  "bg_solid_ink": {
+    "message": "Ink black"
+  },
+  "bg_solid_blossom": {
+    "message": "Cherry blossom"
+  },
+  "bg_solid_mint": {
+    "message": "Mint"
+  },
+  "bg_solid_amber": {
+    "message": "Amber"
+  },
+  "bg_solid_daffodil": {
+    "message": "Daffodil"
+  },
+  "bg_solid_shellPink": {
+    "message": "Shell pink"
+  },
+  "bg_solid_iceBlue": {
+    "message": "Glacier blue"
+  },
+  "bg_solid_sprout": {
+    "message": "Sprout green"
+  },
+  "bg_solid_wisteria": {
+    "message": "Soft wisteria"
+  },
+  "bg_solid_sand": {
+    "message": "Warm sand"
+  },
+  "bg_solid_powder": {
+    "message": "Mist pink"
+  },
+  "bg_solid_custom": {
+    "message": "Custom"
+  },
+  "bg_tex_mesh1": {
+    "message": "Mesh glow"
+  },
+  "bg_tex_mesh2": {
+    "message": "Dual mesh"
+  },
+  "bg_tex_noise": {
+    "message": "Fine noise"
+  },
+  "bg_tex_stripes": {
+    "message": "Stripes"
+  },
+  "bg_tex_dots": {
+    "message": "Dot grid"
+  },
+  "bg_tex_softAurora": {
+    "message": "Soft aurora"
+  },
+  "bg_tex_softSunset": {
+    "message": "Soft sunset"
+  },
+  "bg_tex_grid": {
+    "message": "Grid lines"
+  },
+  "bg_tex_waves": {
+    "message": "Waves"
+  },
+  "bg_tex_pastelMesh": {
+    "message": "Candy mesh"
+  },
+  "bg_tex_sunSpeckle": {
+    "message": "Sun speckle"
+  },
+  "bg_tex_chalkLines": {
+    "message": "Pastel lines"
+  },
+  "bg_tex_bubbleField": {
+    "message": "Bubbles"
+  },
+  "bg_tex_springBloom": {
+    "message": "Spring bloom"
+  },
+  "bg_tex_citrusSlice": {
+    "message": "Citrus slice"
+  },
+  "bg_tex_aquaRipple": {
+    "message": "Aqua ripple"
+  },
+  "bg_tex_bearGrid": {
+    "message": "Bear grid"
+  },
+  "extName": {
+    "message": "Showcase Capture Studio",
+    "description": "Extension name shown in Chrome"
+  },
+  "extDescription": {
+    "message": "Cattura schede, aggiungi sfondi e testo, esporta dimensioni promo (440×280, 1280×800, HD).",
+    "description": "Short description for the Chrome Web Store and extensions page"
+  },
+  "extActionTitle": {
+    "message": "Cattura scheda e apri editor",
+    "description": "Tooltip for the toolbar button"
+  },
+  "editorTitle": {
+    "message": "BrandStudio"
+  },
+  "brandName": {
+    "message": "BrandStudio"
+  },
+  "studio_badge": {
+    "message": "Studio"
+  },
+  "err_screenshot_load": {
+    "message": "Impossibile caricare lo screenshot"
+  },
+  "msg_tab_capture_loaded": {
+    "message": "Cattura dalla barra strumenti caricata"
+  },
+  "err_pick_image_file": {
+    "message": "Scegli un file immagine"
+  },
+  "msg_bg_upload_applied": {
+    "message": "Sfondo personalizzato applicato"
+  },
+  "export_filename_prefix": {
+    "message": "showcase-capture"
+  },
+  "msg_exported": {
+    "message": "Esportato: $1"
+  },
+  "err_export_failed": {
+    "message": "Esportazione non riuscita"
+  },
+  "msg_settings_reset": {
+    "message": "Predefiniti ripristinati (screenshot conservato)"
+  },
+  "err_screenshot_required_first": {
+    "message": "Carica prima uno screenshot"
+  },
+  "err_preview_failed": {
+    "message": "Anteprima non riuscita"
+  },
+  "err_capture_tab": {
+    "message": "Cattura non riuscita (pagine come chrome:// o lo store non sono catturabili)"
+  },
+  "zoom_out": {
+    "message": "Zoom -"
+  },
+  "zoom_in": {
+    "message": "Zoom +"
+  },
+  "zoom_fit": {
+    "message": "Adatta"
+  },
+  "sr_canvas_preset": {
+    "message": "Preimpostazione tela"
+  },
+  "export_size_thumb": {
+    "message": "Miniatura 440 × 280"
+  },
+  "export_size_standard": {
+    "message": "Chrome Web Store 1280 × 800"
+  },
+  "export_size_large": {
+    "message": "Grande 1920 × 1080"
+  },
+  "export_size_custom": {
+    "message": "Dimensione personalizzata"
+  },
+  "export_custom_dims": {
+    "message": "Personalizzato $1 × $2"
+  },
+  "aria_history": {
+    "message": "History"
+  },
+  "undo": {
+    "message": "Annulla"
+  },
+  "redo": {
+    "message": "Ripeti"
+  },
+  "clear_workspace": {
+    "message": "Reimposta"
+  },
+  "preview": {
+    "message": "Anteprima"
+  },
+  "export": {
+    "message": "Esporta"
+  },
+  "exporting": {
+    "message": "Esportazione…"
+  },
+  "nav_layout": {
+    "message": "Layout"
+  },
+  "nav_bg": {
+    "message": "Sfondo"
+  },
+  "nav_copy": {
+    "message": "Testo"
+  },
+  "nav_arrows": {
+    "message": "Arrows"
+  },
+  "arrows_heading": {
+    "message": "Arrows"
+  },
+  "arrows_hint_draw": {
+    "message": "Drag on the preview to draw an arrow, or add one with a default position."
+  },
+  "arrows_add_default": {
+    "message": "Add arrow"
+  },
+  "arrows_head_style_label": {
+    "message": "Arrow head"
+  },
+  "arrows_head_style_hint": {
+    "message": "Shape at the tip (icons match the style)."
+  },
+  "arrows_line_style_label": {
+    "message": "Line style"
+  },
+  "arrows_line_style_hint": {
+    "message": "Straight, dashed, double, or curved shaft."
+  },
+  "arrows_color": {
+    "message": "Color"
+  },
+  "arrows_width": {
+    "message": "Stroke weight"
+  },
+  "arrows_opacity": {
+    "message": "Opacity"
+  },
+  "arrows_list": {
+    "message": "On canvas"
+  },
+  "arrows_item": {
+    "message": "Arrow"
+  },
+  "arrows_delete": {
+    "message": "Delete selected"
+  },
+  "arrow_head_triangle": {
+    "message": "Filled triangle"
+  },
+  "arrow_head_barbed": {
+    "message": "Barbed / stealth"
+  },
+  "arrow_head_chevron": {
+    "message": "Open chevron"
+  },
+  "arrow_head_outline": {
+    "message": "Outlined triangle"
+  },
+  "arrow_head_compact": {
+    "message": "Compact solid"
+  },
+  "arrow_line_straight": {
+    "message": "Solid line"
+  },
+  "arrow_line_dashed": {
+    "message": "Dashed line"
+  },
+  "arrow_line_double": {
+    "message": "Double line"
+  },
+  "arrow_line_curved": {
+    "message": "Curved line"
+  },
+  "undo_shortcut_hint": {
+    "message": "Undo (⌘/Ctrl+Z)"
+  },
+  "redo_shortcut_hint": {
+    "message": "Redo (⌘/Ctrl+Shift+Z or Ctrl+Y)"
+  },
+  "theme_to_light": {
+    "message": "Tema chiaro"
+  },
+  "theme_to_dark": {
+    "message": "Tema scuro"
+  },
+  "hint_canvas_before": {
+    "message": "Nella scheda della "
+  },
+  "hint_canvas_emphasis": {
+    "message": "pagina di destinazione"
+  },
+  "hint_canvas_after": {
+    "message": ", clicca l’icona dell’estensione per aggiornare. Anteprima ($1)."
+  },
+  "canvas_empty_title": {
+    "message": "Nessuno screenshot"
+  },
+  "canvas_empty_hint": {
+    "message": "Apri una pagina web e clicca l’icona dell’estensione"
+  },
+  "aria_editor_menu": {
+    "message": "Editor menu"
+  },
+  "aria_props": {
+    "message": "Properties"
+  },
+  "layout_heading": {
+    "message": "Layout"
+  },
+  "show_grid": {
+    "message": "Griglia"
+  },
+  "layout_embed_browser": {
+    "message": "Embed browser frame"
+  },
+  "layout_embed_browser_hint": {
+    "message": "Draws browser-style chrome (tab strip, address bar, and viewport) around the screenshot area."
+  },
+  "layout_browser_chrome_color": {
+    "message": "Frame color"
+  },
+  "custom_export_dims_heading": {
+    "message": "Dimensione esportazione"
+  },
+  "custom_export_dims_hint": {
+    "message": "Usata con «Dimensione personalizzata» in alto."
+  },
+  "dim_width": {
+    "message": "Larghezza"
+  },
+  "dim_height": {
+    "message": "Altezza"
+  },
+  "layout_split_text_left_name": {
+    "message": "Split · testo sx"
+  },
+  "layout_split_text_left_desc": {
+    "message": "Testo a sinistra, screenshot a destra"
+  },
+  "layout_split_text_right_name": {
+    "message": "Split · testo dx"
+  },
+  "layout_split_text_right_desc": {
+    "message": "Screenshot a sinistra, testo a destra"
+  },
+  "layout_centered_text_top_name": {
+    "message": "Banner · alto"
+  },
+  "layout_centered_text_top_desc": {
+    "message": "Testo sopra, screenshot sotto"
+  },
+  "layout_centered_text_bottom_name": {
+    "message": "Banner · basso"
+  },
+  "layout_centered_text_bottom_desc": {
+    "message": "Screenshot sopra, testo sotto"
+  },
+  "layout_bleed_full_name": {
+    "message": "Schermo intero"
+  },
+  "layout_bleed_full_desc": {
+    "message": "Lo screenshot riempie la tela"
+  },
+  "layout_split_narrow_left_name": {
+    "message": "Colonna · sx"
+  },
+  "layout_split_narrow_left_desc": {
+    "message": "Colonna testo stretta a sinistra"
+  },
+  "layout_split_narrow_right_name": {
+    "message": "Colonna · dx"
+  },
+  "layout_split_narrow_right_desc": {
+    "message": "Colonna testo stretta a destra"
+  },
+  "layout_stack_compact_top_name": {
+    "message": "Barra superiore"
+  },
+  "layout_stack_compact_top_desc": {
+    "message": "Barra testo sottile, immagine più grande"
+  },
+  "props_bg_heading": {
+    "message": "Sfondo"
+  },
+  "bg_cat_style": {
+    "message": "Sfumature"
+  },
+  "bg_cat_image": {
+    "message": "Trame"
+  },
+  "bg_cat_solid": {
+    "message": "Tinta unita"
+  },
+  "bg_section_gradients": {
+    "message": "Sfumature e colore"
+  },
+  "bg_section_builtin": {
+    "message": "Trame integrate"
+  },
+  "bg_section_upload": {
+    "message": "Caricamento"
+  },
+  "bg_upload_hint": {
+    "message": "Il caricamento sostituisce le trame finché non lo cancelli."
+  },
+  "upload_bg_image": {
+    "message": "Carica immagine"
+  },
+  "clear_upload": {
+    "message": "Rimuovi caricamento"
+  },
+  "bg_section_presets": {
+    "message": "Preimpostazioni"
+  },
+  "custom_color": {
+    "message": "Colore personalizzato"
+  },
+  "copy_heading": {
+    "message": "Testo"
+  },
+  "copy_hint_long": {
+    "message": "Digita sulla tela o qui. Cambiando layout le caselle si riallineano. Trascina sui bordi; larghezza in basso a destra."
+  },
+  "role_title": {
+    "message": "Titolo"
+  },
+  "role_subtitle": {
+    "message": "Sottotitolo"
+  },
+  "field_copy": {
+    "message": "Testo"
+  },
+  "copy_placeholder": {
+    "message": "es. Blocca annunci con regole personalizzate…"
+  },
+  "color": {
+    "message": "Colore"
+  },
+  "font": {
+    "message": "Font"
+  },
+  "font_size_label": {
+    "message": "Dimensione $1"
+  },
+  "transparency_label": {
+    "message": "Trasparenza $1% (più alto = più trasparente)"
+  },
+  "copy_align_label": {
+    "message": "Alignment"
+  },
+  "copy_align_left": {
+    "message": "Left"
+  },
+  "copy_align_center": {
+    "message": "Center"
+  },
+  "copy_align_right": {
+    "message": "Right"
+  },
+  "text_effects_heading": {
+    "message": "Effetti"
+  },
+  "bold": {
+    "message": "Grassetto"
+  },
+  "preview_modal_title": {
+    "message": "Anteprima esportazione ($1)"
+  },
+  "close": {
+    "message": "Chiudi"
+  },
+  "preview_image_alt": {
+    "message": "Anteprima"
+  },
+  "drag_move": {
+    "message": "Trascina"
+  },
+  "drag_resize_width": {
+    "message": "Ridimensiona larghezza"
+  },
+  "ph_title": {
+    "message": "Titolo"
+  },
+  "ph_subtitle": {
+    "message": "Sottotitolo / descrizione"
+  },
+  "font_system": {
+    "message": "System UI"
+  },
+  "font_notoSansSc": {
+    "message": "Noto Sans SC"
+  },
+  "font_lxgwWenkai": {
+    "message": "LXGW WenKai"
+  },
+  "font_zcoolKuaiLe": {
+    "message": "ZCOOL KuaiLe"
+  },
+  "font_maShanZheng": {
+    "message": "Ma Shan Zheng"
+  },
+  "text_fx_solid": {
+    "message": "Tinta unita"
+  },
+  "text_fx_gradient": {
+    "message": "Sfumatura"
+  },
+  "text_fx_metallic": {
+    "message": "Metallico"
+  },
+  "text_fx_crystal": {
+    "message": "Cristallo"
+  },
+  "text_fx_neon": {
+    "message": "Neon"
+  },
+  "text_fx_outline": {
+    "message": "Contorno"
+  },
+  "text_fx_emboss": {
+    "message": "Rilievo"
+  },
+  "text_fx_duotone": {
+    "message": "Bicolore"
+  },
+  "text_fx_shadowPop": {
+    "message": "Ombra 3D"
+  }
+}

@@ -1,0 +1,584 @@
+{
+  "bg_style_aurora": {
+    "message": "Aurora night"
+  },
+  "bg_style_sunset": {
+    "message": "Sunset glow"
+  },
+  "bg_style_emerald": {
+    "message": "Emerald forest"
+  },
+  "bg_style_rose": {
+    "message": "Rose mist"
+  },
+  "bg_style_electric": {
+    "message": "Electric violet"
+  },
+  "bg_style_lava": {
+    "message": "Lava red"
+  },
+  "bg_style_mist": {
+    "message": "Purple mist"
+  },
+  "bg_style_lime": {
+    "message": "Lime burst"
+  },
+  "bg_style_cobalt": {
+    "message": "Deep cobalt"
+  },
+  "bg_style_daySpring": {
+    "message": "Spring dawn"
+  },
+  "bg_style_peachGlow": {
+    "message": "Peach soda"
+  },
+  "bg_style_lemonFizz": {
+    "message": "Lemon fizz"
+  },
+  "bg_style_mintIce": {
+    "message": "Mint frappe"
+  },
+  "bg_style_lavenderAir": {
+    "message": "Lavender breeze"
+  },
+  "bg_style_aquaPop": {
+    "message": "Sky soda"
+  },
+  "bg_style_candyFloss": {
+    "message": "Cotton candy"
+  },
+  "bg_solid_linen": {
+    "message": "Linen paper"
+  },
+  "bg_solid_cloud": {
+    "message": "Cloud white"
+  },
+  "bg_solid_ocean": {
+    "message": "Deep ocean"
+  },
+  "bg_solid_midnight": {
+    "message": "Midnight slate"
+  },
+  "bg_solid_ink": {
+    "message": "Ink black"
+  },
+  "bg_solid_blossom": {
+    "message": "Cherry blossom"
+  },
+  "bg_solid_mint": {
+    "message": "Mint"
+  },
+  "bg_solid_amber": {
+    "message": "Amber"
+  },
+  "bg_solid_daffodil": {
+    "message": "Daffodil"
+  },
+  "bg_solid_shellPink": {
+    "message": "Shell pink"
+  },
+  "bg_solid_iceBlue": {
+    "message": "Glacier blue"
+  },
+  "bg_solid_sprout": {
+    "message": "Sprout green"
+  },
+  "bg_solid_wisteria": {
+    "message": "Soft wisteria"
+  },
+  "bg_solid_sand": {
+    "message": "Warm sand"
+  },
+  "bg_solid_powder": {
+    "message": "Mist pink"
+  },
+  "bg_solid_custom": {
+    "message": "Custom"
+  },
+  "bg_tex_mesh1": {
+    "message": "Mesh glow"
+  },
+  "bg_tex_mesh2": {
+    "message": "Dual mesh"
+  },
+  "bg_tex_noise": {
+    "message": "Fine noise"
+  },
+  "bg_tex_stripes": {
+    "message": "Stripes"
+  },
+  "bg_tex_dots": {
+    "message": "Dot grid"
+  },
+  "bg_tex_softAurora": {
+    "message": "Soft aurora"
+  },
+  "bg_tex_softSunset": {
+    "message": "Soft sunset"
+  },
+  "bg_tex_grid": {
+    "message": "Grid lines"
+  },
+  "bg_tex_waves": {
+    "message": "Waves"
+  },
+  "bg_tex_pastelMesh": {
+    "message": "Candy mesh"
+  },
+  "bg_tex_sunSpeckle": {
+    "message": "Sun speckle"
+  },
+  "bg_tex_chalkLines": {
+    "message": "Pastel lines"
+  },
+  "bg_tex_bubbleField": {
+    "message": "Bubbles"
+  },
+  "bg_tex_springBloom": {
+    "message": "Spring bloom"
+  },
+  "bg_tex_citrusSlice": {
+    "message": "Citrus slice"
+  },
+  "bg_tex_aquaRipple": {
+    "message": "Aqua ripple"
+  },
+  "bg_tex_bearGrid": {
+    "message": "Bear grid"
+  },
+  "extName": {
+    "message": "Showcase Capture Studio",
+    "description": "Extension name shown in Chrome"
+  },
+  "extDescription": {
+    "message": "탭을 캡처하고 배경·텍스트를 추가해 프로모용 크기(440×280, 1280×800, HD)로보냅니다.",
+    "description": "Short description for the Chrome Web Store and extensions page"
+  },
+  "extActionTitle": {
+    "message": "탭 캡처 후 편집기 열기",
+    "description": "Tooltip for the toolbar button"
+  },
+  "editorTitle": {
+    "message": "BrandStudio"
+  },
+  "brandName": {
+    "message": "BrandStudio"
+  },
+  "studio_badge": {
+    "message": "Studio"
+  },
+  "err_screenshot_load": {
+    "message": "스크린샷을 불러오지 못했습니다"
+  },
+  "msg_tab_capture_loaded": {
+    "message": "도구 모음에서 캡처를 불러왔습니다"
+  },
+  "err_pick_image_file": {
+    "message": "이미지 파일을 선택하세요"
+  },
+  "msg_bg_upload_applied": {
+    "message": "사용자 배경이 적용되었습니다"
+  },
+  "export_filename_prefix": {
+    "message": "showcase-capture"
+  },
+  "msg_exported": {
+    "message": "보냄: $1"
+  },
+  "err_export_failed": {
+    "message": "보내기 실패"
+  },
+  "msg_settings_reset": {
+    "message": "기본값으로 복원(캡처는 유지)"
+  },
+  "err_screenshot_required_first": {
+    "message": "먼저 스크린샷을 불러오세요"
+  },
+  "err_preview_failed": {
+    "message": "미리보기 실패"
+  },
+  "err_capture_tab": {
+    "message": "캡처 실패(chrome:// 또는 스토어 등 제한 페이지는 불가)"
+  },
+  "zoom_out": {
+    "message": "축소"
+  },
+  "zoom_in": {
+    "message": "확대"
+  },
+  "zoom_fit": {
+    "message": "맞춤"
+  },
+  "sr_canvas_preset": {
+    "message": "캔버스 프리셋"
+  },
+  "export_size_thumb": {
+    "message": "썸네일 440 × 280"
+  },
+  "export_size_standard": {
+    "message": "Chrome 웹스토어 1280 × 800"
+  },
+  "export_size_large": {
+    "message": "큰 크기 1920 × 1080"
+  },
+  "export_size_custom": {
+    "message": "사용자 지정 크기"
+  },
+  "export_custom_dims": {
+    "message": "사용자 지정 $1 × $2"
+  },
+  "aria_history": {
+    "message": "History"
+  },
+  "undo": {
+    "message": "실행 취소"
+  },
+  "redo": {
+    "message": "다시 실행"
+  },
+  "clear_workspace": {
+    "message": "초기화"
+  },
+  "preview": {
+    "message": "미리보기"
+  },
+  "export": {
+    "message": "보내기"
+  },
+  "exporting": {
+    "message": "보내는 중…"
+  },
+  "nav_layout": {
+    "message": "레이아웃"
+  },
+  "nav_bg": {
+    "message": "배경"
+  },
+  "nav_copy": {
+    "message": "텍스트"
+  },
+  "nav_arrows": {
+    "message": "Arrows"
+  },
+  "arrows_heading": {
+    "message": "Arrows"
+  },
+  "arrows_hint_draw": {
+    "message": "Drag on the preview to draw an arrow, or add one with a default position."
+  },
+  "arrows_add_default": {
+    "message": "Add arrow"
+  },
+  "arrows_head_style_label": {
+    "message": "Arrow head"
+  },
+  "arrows_head_style_hint": {
+    "message": "Shape at the tip (icons match the style)."
+  },
+  "arrows_line_style_label": {
+    "message": "Line style"
+  },
+  "arrows_line_style_hint": {
+    "message": "Straight, dashed, double, or curved shaft."
+  },
+  "arrows_color": {
+    "message": "Color"
+  },
+  "arrows_width": {
+    "message": "Stroke weight"
+  },
+  "arrows_opacity": {
+    "message": "Opacity"
+  },
+  "arrows_list": {
+    "message": "On canvas"
+  },
+  "arrows_item": {
+    "message": "Arrow"
+  },
+  "arrows_delete": {
+    "message": "Delete selected"
+  },
+  "arrow_head_triangle": {
+    "message": "Filled triangle"
+  },
+  "arrow_head_barbed": {
+    "message": "Barbed / stealth"
+  },
+  "arrow_head_chevron": {
+    "message": "Open chevron"
+  },
+  "arrow_head_outline": {
+    "message": "Outlined triangle"
+  },
+  "arrow_head_compact": {
+    "message": "Compact solid"
+  },
+  "arrow_line_straight": {
+    "message": "Solid line"
+  },
+  "arrow_line_dashed": {
+    "message": "Dashed line"
+  },
+  "arrow_line_double": {
+    "message": "Double line"
+  },
+  "arrow_line_curved": {
+    "message": "Curved line"
+  },
+  "undo_shortcut_hint": {
+    "message": "Undo (⌘/Ctrl+Z)"
+  },
+  "redo_shortcut_hint": {
+    "message": "Redo (⌘/Ctrl+Shift+Z or Ctrl+Y)"
+  },
+  "theme_to_light": {
+    "message": "밝은 테마"
+  },
+  "theme_to_dark": {
+    "message": "어두운 테마"
+  },
+  "hint_canvas_before": {
+    "message": ""
+  },
+  "hint_canvas_emphasis": {
+    "message": "대상 페이지"
+  },
+  "hint_canvas_after": {
+    "message": " 탭에서 확장 프로그램 아이콘을 클릭해 갱신하세요. 캔버스 미리보기($1)."
+  },
+  "canvas_empty_title": {
+    "message": "스크린샷 없음"
+  },
+  "canvas_empty_hint": {
+    "message": "일반 웹페이지를 연 뒤 도구 모음 아이콘을 클릭하세요"
+  },
+  "aria_editor_menu": {
+    "message": "Editor menu"
+  },
+  "aria_props": {
+    "message": "Properties"
+  },
+  "layout_heading": {
+    "message": "레이아웃"
+  },
+  "show_grid": {
+    "message": "격자 표시"
+  },
+  "layout_embed_browser": {
+    "message": "Embed browser frame"
+  },
+  "layout_embed_browser_hint": {
+    "message": "Draws browser-style chrome (tab strip, address bar, and viewport) around the screenshot area."
+  },
+  "layout_browser_chrome_color": {
+    "message": "Frame color"
+  },
+  "custom_export_dims_heading": {
+    "message": "보내기 크기"
+  },
+  "custom_export_dims_hint": {
+    "message": "상단에서 «사용자 지정 크기»를 선택할 때 사용됩니다."
+  },
+  "dim_width": {
+    "message": "너비"
+  },
+  "dim_height": {
+    "message": "높이"
+  },
+  "layout_split_text_left_name": {
+    "message": "분할 · 왼쪽 텍스트"
+  },
+  "layout_split_text_left_desc": {
+    "message": "왼쪽 텍스트, 오른쪽 캡처"
+  },
+  "layout_split_text_right_name": {
+    "message": "분할 · 오른쪽 텍스트"
+  },
+  "layout_split_text_right_desc": {
+    "message": "왼쪽 캡처, 오른쪽 텍스트"
+  },
+  "layout_centered_text_top_name": {
+    "message": "띠 · 상단"
+  },
+  "layout_centered_text_top_desc": {
+    "message": "위 텍스트, 아래 캡처"
+  },
+  "layout_centered_text_bottom_name": {
+    "message": "띠 · 하단"
+  },
+  "layout_centered_text_bottom_desc": {
+    "message": "위 캡처, 아래 텍스트"
+  },
+  "layout_bleed_full_name": {
+    "message": "풀 블리드"
+  },
+  "layout_bleed_full_desc": {
+    "message": "캡처가 캔버스를 채움"
+  },
+  "layout_split_narrow_left_name": {
+    "message": "좁은 열 · 왼쪽"
+  },
+  "layout_split_narrow_left_desc": {
+    "message": "왼쪽 좁은 텍스트 열"
+  },
+  "layout_split_narrow_right_name": {
+    "message": "좁은 열 · 오른쪽"
+  },
+  "layout_split_narrow_right_desc": {
+    "message": "오른쪽 좁은 텍스트 열"
+  },
+  "layout_stack_compact_top_name": {
+    "message": "상단 바"
+  },
+  "layout_stack_compact_top_desc": {
+    "message": "얇은 텍스트 바, 이미지 확대"
+  },
+  "props_bg_heading": {
+    "message": "배경"
+  },
+  "bg_cat_style": {
+    "message": "그라데이션"
+  },
+  "bg_cat_image": {
+    "message": "질감"
+  },
+  "bg_cat_solid": {
+    "message": "단색"
+  },
+  "bg_section_gradients": {
+    "message": "그라데이션·색"
+  },
+  "bg_section_builtin": {
+    "message": "내장 질감"
+  },
+  "bg_section_upload": {
+    "message": "업로드"
+  },
+  "bg_upload_hint": {
+    "message": "업로드는 지울 때까지 내장을 대체합니다."
+  },
+  "upload_bg_image": {
+    "message": "이미지 업로드"
+  },
+  "clear_upload": {
+    "message": "업로드 지우기"
+  },
+  "bg_section_presets": {
+    "message": "프리셋"
+  },
+  "custom_color": {
+    "message": "사용자 지정 색"
+  },
+  "copy_heading": {
+    "message": "텍스트"
+  },
+  "copy_hint_long": {
+    "message": "캔버스나 여기에 입력. 레이아웃 변경 시 상자가 맞춰집니다. 가장자리로 끌기, 너비는 오른쪽 아래."
+  },
+  "role_title": {
+    "message": "제목"
+  },
+  "role_subtitle": {
+    "message": "부제"
+  },
+  "field_copy": {
+    "message": "텍스트"
+  },
+  "copy_placeholder": {
+    "message": "예: 규칙으로 광고 차단…"
+  },
+  "color": {
+    "message": "색"
+  },
+  "font": {
+    "message": "글꼴"
+  },
+  "font_size_label": {
+    "message": "크기 $1"
+  },
+  "transparency_label": {
+    "message": "투명도 $1%(높을수록 투명)"
+  },
+  "copy_align_label": {
+    "message": "Alignment"
+  },
+  "copy_align_left": {
+    "message": "Left"
+  },
+  "copy_align_center": {
+    "message": "Center"
+  },
+  "copy_align_right": {
+    "message": "Right"
+  },
+  "text_effects_heading": {
+    "message": "효과"
+  },
+  "bold": {
+    "message": "굵게"
+  },
+  "preview_modal_title": {
+    "message": "보내기 미리보기($1)"
+  },
+  "close": {
+    "message": "닫기"
+  },
+  "preview_image_alt": {
+    "message": "미리보기"
+  },
+  "drag_move": {
+    "message": "끌기"
+  },
+  "drag_resize_width": {
+    "message": "너비 조절"
+  },
+  "ph_title": {
+    "message": "제목"
+  },
+  "ph_subtitle": {
+    "message": "부제 / 설명"
+  },
+  "font_system": {
+    "message": "System UI"
+  },
+  "font_notoSansSc": {
+    "message": "Noto Sans SC"
+  },
+  "font_lxgwWenkai": {
+    "message": "LXGW WenKai"
+  },
+  "font_zcoolKuaiLe": {
+    "message": "ZCOOL KuaiLe"
+  },
+  "font_maShanZheng": {
+    "message": "Ma Shan Zheng"
+  },
+  "text_fx_solid": {
+    "message": "단색"
+  },
+  "text_fx_gradient": {
+    "message": "그라데이션"
+  },
+  "text_fx_metallic": {
+    "message": "메탈릭"
+  },
+  "text_fx_crystal": {
+    "message": "크리스탈"
+  },
+  "text_fx_neon": {
+    "message": "네온"
+  },
+  "text_fx_outline": {
+    "message": "윤곽"
+  },
+  "text_fx_emboss": {
+    "message": "엠보스"
+  },
+  "text_fx_duotone": {
+    "message": "듀오톤"
+  },
+  "text_fx_shadowPop": {
+    "message": "3D 그림자"
+  }
+}

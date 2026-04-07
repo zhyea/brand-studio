@@ -1,0 +1,584 @@
+{
+  "bg_style_aurora": {
+    "message": "極光夜"
+  },
+  "bg_style_sunset": {
+    "message": "暮光漸變"
+  },
+  "bg_style_emerald": {
+    "message": "翡翠森"
+  },
+  "bg_style_rose": {
+    "message": "玫瑰霧"
+  },
+  "bg_style_electric": {
+    "message": "電光紫"
+  },
+  "bg_style_lava": {
+    "message": "熔岩紅"
+  },
+  "bg_style_mist": {
+    "message": "薄霧紫"
+  },
+  "bg_style_lime": {
+    "message": "青檸爆"
+  },
+  "bg_style_cobalt": {
+    "message": "鈷藍深"
+  },
+  "bg_style_daySpring": {
+    "message": "春日晨光"
+  },
+  "bg_style_peachGlow": {
+    "message": "蜜桃蘇打"
+  },
+  "bg_style_lemonFizz": {
+    "message": "檸檬氣泡"
+  },
+  "bg_style_mintIce": {
+    "message": "薄荷冰沙"
+  },
+  "bg_style_lavenderAir": {
+    "message": "薰衣草風"
+  },
+  "bg_style_aquaPop": {
+    "message": "青空汽水"
+  },
+  "bg_style_candyFloss": {
+    "message": "棉花糖雲"
+  },
+  "bg_solid_linen": {
+    "message": "素雅紙紋"
+  },
+  "bg_solid_cloud": {
+    "message": "雲白"
+  },
+  "bg_solid_ocean": {
+    "message": "深海藍"
+  },
+  "bg_solid_midnight": {
+    "message": "午夜灰"
+  },
+  "bg_solid_ink": {
+    "message": "墨黑"
+  },
+  "bg_solid_blossom": {
+    "message": "櫻粉"
+  },
+  "bg_solid_mint": {
+    "message": "薄荷"
+  },
+  "bg_solid_amber": {
+    "message": "琥珀"
+  },
+  "bg_solid_daffodil": {
+    "message": "水仙黃"
+  },
+  "bg_solid_shellPink": {
+    "message": "貝殼粉"
+  },
+  "bg_solid_iceBlue": {
+    "message": "冰川藍"
+  },
+  "bg_solid_sprout": {
+    "message": "新芽綠"
+  },
+  "bg_solid_wisteria": {
+    "message": "藤紫淺"
+  },
+  "bg_solid_sand": {
+    "message": "暖沙米"
+  },
+  "bg_solid_powder": {
+    "message": "霧粉白"
+  },
+  "bg_solid_custom": {
+    "message": "自定義"
+  },
+  "bg_tex_mesh1": {
+    "message": "網格流光"
+  },
+  "bg_tex_mesh2": {
+    "message": "雙色 mesh"
+  },
+  "bg_tex_noise": {
+    "message": "細膩噪點"
+  },
+  "bg_tex_stripes": {
+    "message": "斜紋"
+  },
+  "bg_tex_dots": {
+    "message": "圓點陣"
+  },
+  "bg_tex_softAurora": {
+    "message": "柔光極光"
+  },
+  "bg_tex_softSunset": {
+    "message": "柔光晚霞"
+  },
+  "bg_tex_grid": {
+    "message": "方格線"
+  },
+  "bg_tex_waves": {
+    "message": "波浪紋"
+  },
+  "bg_tex_pastelMesh": {
+    "message": "糖果網格"
+  },
+  "bg_tex_sunSpeckle": {
+    "message": "陽光碎金"
+  },
+  "bg_tex_chalkLines": {
+    "message": "粉彩斜線"
+  },
+  "bg_tex_bubbleField": {
+    "message": "氣泡樂園"
+  },
+  "bg_tex_springBloom": {
+    "message": "春花漫染"
+  },
+  "bg_tex_citrusSlice": {
+    "message": "柑橘切片"
+  },
+  "bg_tex_aquaRipple": {
+    "message": "淺海漣漪"
+  },
+  "bg_tex_bearGrid": {
+    "message": "小熊格子"
+  },
+  "extName": {
+    "message": "BrandStudio - 擴充功能截圖",
+    "description": "Extension name shown in Chrome"
+  },
+  "extDescription": {
+    "message": "擷取分頁，添加背景與文案，導出應用程式商店推廣尺寸（440×280、1280×800、高清大圖）。",
+    "description": "Short description for the Chrome Web Store and extensions page"
+  },
+  "extActionTitle": {
+    "message": "擷取當前分頁並打開推廣圖編輯器",
+    "description": "Tooltip for the toolbar button"
+  },
+  "editorTitle": {
+    "message": "BrandStudio"
+  },
+  "brandName": {
+    "message": "BrandStudio"
+  },
+  "studio_badge": {
+    "message": "Studio"
+  },
+  "err_screenshot_load": {
+    "message": "截圖加載失敗"
+  },
+  "msg_tab_capture_loaded": {
+    "message": "已載入工具列擷取的畫面"
+  },
+  "err_pick_image_file": {
+    "message": "請選擇圖片文件"
+  },
+  "msg_bg_upload_applied": {
+    "message": "已應用上傳背景"
+  },
+  "export_filename_prefix": {
+    "message": "擴充功能截圖"
+  },
+  "msg_exported": {
+    "message": "已導出：$1"
+  },
+  "err_export_failed": {
+    "message": "導出失敗"
+  },
+  "msg_settings_reset": {
+    "message": "已恢復默認設置（截圖已保留）"
+  },
+  "err_screenshot_required_first": {
+    "message": "請先載入截圖"
+  },
+  "err_preview_failed": {
+    "message": "預覽失敗"
+  },
+  "err_capture_tab": {
+    "message": "擷取失敗（受限頁面如 chrome:// 或應用程式商店等無法截圖）"
+  },
+  "zoom_out": {
+    "message": "縮小"
+  },
+  "zoom_in": {
+    "message": "放大"
+  },
+  "zoom_fit": {
+    "message": "適應"
+  },
+  "sr_canvas_preset": {
+    "message": "畫布預設"
+  },
+  "export_size_thumb": {
+    "message": "縮略圖 440 × 280"
+  },
+  "export_size_standard": {
+    "message": "Chrome 商店 1280 × 800"
+  },
+  "export_size_large": {
+    "message": "大圖 1920 × 1080"
+  },
+  "export_size_custom": {
+    "message": "自定義尺寸"
+  },
+  "export_custom_dims": {
+    "message": "自定義 $1 × $2"
+  },
+  "aria_history": {
+    "message": "歷史操作"
+  },
+  "undo": {
+    "message": "復原"
+  },
+  "redo": {
+    "message": "恢復"
+  },
+  "clear_workspace": {
+    "message": "一鍵清除"
+  },
+  "preview": {
+    "message": "預覽"
+  },
+  "export": {
+    "message": "導出"
+  },
+  "exporting": {
+    "message": "導出中…"
+  },
+  "nav_layout": {
+    "message": "版式"
+  },
+  "nav_bg": {
+    "message": "背景"
+  },
+  "nav_copy": {
+    "message": "文案"
+  },
+  "nav_arrows": {
+    "message": "箭頭"
+  },
+  "arrows_heading": {
+    "message": "箭頭"
+  },
+  "arrows_hint_draw": {
+    "message": "在預覽上拖拽繪製箭頭，或使用下方按鈕添加默認位置的箭頭。"
+  },
+  "arrows_add_default": {
+    "message": "添加箭頭"
+  },
+  "arrows_head_style_label": {
+    "message": "箭頭樣式"
+  },
+  "arrows_head_style_hint": {
+    "message": "箭頭尖端的形狀（按鈕圖標與效果一致）。"
+  },
+  "arrows_line_style_label": {
+    "message": "線條樣式"
+  },
+  "arrows_line_style_hint": {
+    "message": "箭桿可為實線、虛線、雙線或弧線。"
+  },
+  "arrows_color": {
+    "message": "顏色"
+  },
+  "arrows_width": {
+    "message": "線寬"
+  },
+  "arrows_opacity": {
+    "message": "不透明度"
+  },
+  "arrows_list": {
+    "message": "畫布上的箭頭"
+  },
+  "arrows_item": {
+    "message": "箭頭"
+  },
+  "arrows_delete": {
+    "message": "刪除所選"
+  },
+  "arrow_head_triangle": {
+    "message": "實心三角"
+  },
+  "arrow_head_barbed": {
+    "message": "倒鉤 / 隱身"
+  },
+  "arrow_head_chevron": {
+    "message": "開口 V 形"
+  },
+  "arrow_head_outline": {
+    "message": "外框三角"
+  },
+  "arrow_head_compact": {
+    "message": "小巧實心"
+  },
+  "arrow_line_straight": {
+    "message": "實線"
+  },
+  "arrow_line_dashed": {
+    "message": "虛線"
+  },
+  "arrow_line_double": {
+    "message": "雙線"
+  },
+  "arrow_line_curved": {
+    "message": "弧線"
+  },
+  "undo_shortcut_hint": {
+    "message": "撤銷（⌘/Ctrl+Z）"
+  },
+  "redo_shortcut_hint": {
+    "message": "恢復（⌘/Ctrl+Shift+Z 或 Ctrl+Y）"
+  },
+  "theme_to_light": {
+    "message": "切換為亮色主題"
+  },
+  "theme_to_dark": {
+    "message": "切換為深色主題"
+  },
+  "hint_canvas_before": {
+    "message": "在"
+  },
+  "hint_canvas_emphasis": {
+    "message": "目標網頁"
+  },
+  "hint_canvas_after": {
+    "message": "標籤下點擊擴展圖標可更新截圖；此處為畫布預覽（$1）。"
+  },
+  "canvas_empty_title": {
+    "message": "尚未載入截圖"
+  },
+  "canvas_empty_hint": {
+    "message": "請在可截圖的網頁上點擊工具列圖標"
+  },
+  "aria_editor_menu": {
+    "message": "編輯菜單"
+  },
+  "aria_props": {
+    "message": "屬性"
+  },
+  "layout_heading": {
+    "message": "版式"
+  },
+  "show_grid": {
+    "message": "顯示網格"
+  },
+  "layout_embed_browser": {
+    "message": "嵌入瀏覽器"
+  },
+  "layout_embed_browser_hint": {
+    "message": "在版式中的截圖區域外圍繪製瀏覽器窗口樣式（標籤欄、地址欄與內容區）。"
+  },
+  "layout_browser_chrome_color": {
+    "message": "瀏覽器框顏色"
+  },
+  "custom_export_dims_heading": {
+    "message": "自定義導出尺寸"
+  },
+  "custom_export_dims_hint": {
+    "message": "頂欄選擇「自定義尺寸」時按此處寬高導出。"
+  },
+  "dim_width": {
+    "message": "寬度"
+  },
+  "dim_height": {
+    "message": "高度"
+  },
+  "layout_split_text_left_name": {
+    "message": "分欄·左"
+  },
+  "layout_split_text_left_desc": {
+    "message": "文字在左，截圖在右"
+  },
+  "layout_split_text_right_name": {
+    "message": "分欄·右"
+  },
+  "layout_split_text_right_desc": {
+    "message": "截圖在左，文字在右"
+  },
+  "layout_centered_text_top_name": {
+    "message": "通欄·上"
+  },
+  "layout_centered_text_top_desc": {
+    "message": "文字在上，截圖在下"
+  },
+  "layout_centered_text_bottom_name": {
+    "message": "通欄·下"
+  },
+  "layout_centered_text_bottom_desc": {
+    "message": "截圖在上，文字在下"
+  },
+  "layout_bleed_full_name": {
+    "message": "全幅主圖"
+  },
+  "layout_bleed_full_desc": {
+    "message": "截圖儘量鋪滿畫布"
+  },
+  "layout_split_narrow_left_name": {
+    "message": "窄欄·左"
+  },
+  "layout_split_narrow_left_desc": {
+    "message": "左側窄條文案區"
+  },
+  "layout_split_narrow_right_name": {
+    "message": "窄欄·右"
+  },
+  "layout_split_narrow_right_desc": {
+    "message": "右側窄條文案區"
+  },
+  "layout_stack_compact_top_name": {
+    "message": "頂欄·窄"
+  },
+  "layout_stack_compact_top_desc": {
+    "message": "頂部窄條，主圖更大"
+  },
+  "props_bg_heading": {
+    "message": "背景"
+  },
+  "bg_cat_style": {
+    "message": "背景色"
+  },
+  "bg_cat_image": {
+    "message": "背景圖"
+  },
+  "bg_cat_solid": {
+    "message": "純色"
+  },
+  "bg_section_gradients": {
+    "message": "漸變與彩色"
+  },
+  "bg_section_builtin": {
+    "message": "內置紋理"
+  },
+  "bg_section_upload": {
+    "message": "自定義上傳"
+  },
+  "bg_upload_hint": {
+    "message": "上傳後優先於內置紋理，可清除恢復。"
+  },
+  "upload_bg_image": {
+    "message": "上傳背景圖"
+  },
+  "clear_upload": {
+    "message": "清除上傳"
+  },
+  "bg_section_presets": {
+    "message": "預設與自定義"
+  },
+  "custom_color": {
+    "message": "自定義色"
+  },
+  "copy_heading": {
+    "message": "文案"
+  },
+  "copy_hint_long": {
+    "message": "可在畫布文本框內直接輸入；切換版式時會自動對齊文案區位置。選中後沿邊框拖動移動，四角圓點均可橫向調整寬度。"
+  },
+  "role_title": {
+    "message": "主標題"
+  },
+  "role_subtitle": {
+    "message": "副標題"
+  },
+  "field_copy": {
+    "message": "文案"
+  },
+  "copy_placeholder": {
+    "message": "例如：一鍵屏蔽廣告，支持自定義規則…"
+  },
+  "color": {
+    "message": "顏色"
+  },
+  "font": {
+    "message": "字體"
+  },
+  "font_size_label": {
+    "message": "字號 $1"
+  },
+  "transparency_label": {
+    "message": "透明度 $1%（越大越透明）"
+  },
+  "copy_align_label": {
+    "message": "對齊方式"
+  },
+  "copy_align_left": {
+    "message": "左對齊"
+  },
+  "copy_align_center": {
+    "message": "居中"
+  },
+  "copy_align_right": {
+    "message": "右對齊"
+  },
+  "text_effects_heading": {
+    "message": "效果"
+  },
+  "bold": {
+    "message": "加粗"
+  },
+  "preview_modal_title": {
+    "message": "導出尺寸預覽（$1）"
+  },
+  "close": {
+    "message": "關閉"
+  },
+  "preview_image_alt": {
+    "message": "預覽"
+  },
+  "drag_move": {
+    "message": "拖動移動"
+  },
+  "drag_resize_width": {
+    "message": "拖動調整寬度"
+  },
+  "ph_title": {
+    "message": "主標題"
+  },
+  "ph_subtitle": {
+    "message": "副標題 / 說明"
+  },
+  "font_system": {
+    "message": "系統 UI"
+  },
+  "font_notoSansSc": {
+    "message": "Noto Sans SC"
+  },
+  "font_lxgwWenkai": {
+    "message": "霞鶩文楷"
+  },
+  "font_zcoolKuaiLe": {
+    "message": "站酷快樂體"
+  },
+  "font_maShanZheng": {
+    "message": "馬善政毛筆"
+  },
+  "text_fx_solid": {
+    "message": "純色"
+  },
+  "text_fx_gradient": {
+    "message": "漸變"
+  },
+  "text_fx_metallic": {
+    "message": "金屬"
+  },
+  "text_fx_crystal": {
+    "message": "水晶"
+  },
+  "text_fx_neon": {
+    "message": "霓虹"
+  },
+  "text_fx_outline": {
+    "message": "描邊"
+  },
+  "text_fx_emboss": {
+    "message": "浮雕"
+  },
+  "text_fx_duotone": {
+    "message": "雙色調"
+  },
+  "text_fx_shadowPop": {
+    "message": "立體陰影"
+  }
+}
