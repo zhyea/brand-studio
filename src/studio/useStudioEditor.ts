@@ -33,6 +33,8 @@ import {
   type ArrowAnnotation,
   type ArrowHeadStyleId,
   type ArrowLineStyleId,
+  ARROW_HEAD_IDS,
+  ARROW_LINE_IDS,
 } from '@/lib/compositor';
 import { SESSION_CAPTURE, SESSION_EPOCH, SESSION_ERROR } from '@/sessionKeys';
 import {
@@ -47,6 +49,31 @@ import {
 } from '@/i18n';
 
 const TEXT_LAYER_ALIGNS: TextLayerAlign[] = ['left', 'center', 'right'];
+
+/** 新截图载入时保留：网格、嵌入浏览器、背景、文案样式、箭头面板默认样式 */
+type PersistedTextStyle = Pick<
+  TextLayerState,
+  'fontSize' | 'fontId' | 'color' | 'opacity' | 'effect' | 'bold' | 'textAlign'
+>;
+
+interface PersistedChromeSnapshot {
+  showGrid: boolean;
+  embedBrowserFrame: boolean;
+  embedBrowserChromeColor: string;
+  bgCategory: BgCategory;
+  bgStyleId: BgStyleId;
+  bgSolidId: BgSolidId;
+  solidCustomHex: string;
+  bgBuiltinImageId: BgBuiltinImageId;
+  customBgDataUrl: string | null;
+  titleTextStyle: PersistedTextStyle;
+  subtitleTextStyle: PersistedTextStyle;
+  arrowEditColor: string;
+  arrowEditStrokeNorm: number;
+  arrowEditHeadStyle: ArrowHeadStyleId;
+  arrowEditLineStyle: ArrowLineStyleId;
+  arrowEditOpacity: number;
+}
 
 export function useStudioEditor() {
 const FONT_IDS = FONT_OPTIONS.map((f) => f.id) as FontFamilyId[];
@@ -95,8 +122,8 @@ const showGrid = ref(false);
 /** 截图区域外绘制浏览器窗口框 */
 const embedBrowserFrame = ref(false);
 const embedBrowserChromeColor = ref('#4b5563');
-/** true = 暗夜主题，false = 亮色主题 */
-const themeDark = ref(true);
+/** true = 暗夜主题，false = 亮色主题（默认亮色） */
+const themeDark = ref(false);
 const zoomPercent = ref(100);
 const activeMenu = ref<MenuId>('layout');
 
@@ -257,7 +284,10 @@ function buildCompositeOptions(
 /** 主画布预览合成像素上限（避免极大自定义导出时卡死主线程） */
 const PREVIEW_COMPOSITE_MAX_PIXELS = 6_000_000;
 
-function drawPreview() {
+/** 避免异步合成乱序完成时把旧画面画到画布上 */
+let drawPreviewGeneration = 0;
+
+async function drawPreview() {
   const canvas = previewCanvas.value;
   const img = screenshotImg.value;
   if (!canvas || !img) return;
@@ -277,17 +307,23 @@ function drawPreview() {
   const m = activeMenu.value;
   const skipText = m === 'description';
   const skipArrows = m === 'arrows';
-  const c = compositeToCanvas(buildCompositeOptions(compW, compH, skipText, skipArrows));
-  canvas.width = c.width;
-  canvas.height = c.height;
-  canvas.style.width = `${pw}px`;
-  canvas.style.height = `${ph}px`;
-  previewMetrics.value = { pw, ph };
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return;
-  ctx.setTransform(1, 0, 0, 1, 0, 0);
-  ctx.drawImage(c, 0, 0);
-  requestAnimationFrame(measureBoard);
+  const gen = ++drawPreviewGeneration;
+  try {
+    const c = await compositeToCanvas(buildCompositeOptions(compW, compH, skipText, skipArrows));
+    if (gen !== drawPreviewGeneration) return;
+    canvas.width = c.width;
+    canvas.height = c.height;
+    canvas.style.width = `${pw}px`;
+    canvas.style.height = `${ph}px`;
+    previewMetrics.value = { pw, ph };
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(c, 0, 0);
+    requestAnimationFrame(measureBoard);
+  } catch {
+    /* 合成失败时保持上一帧，避免闪空白 */
+  }
 }
 
 watch(
@@ -309,7 +345,7 @@ watch(
     activeMenu,
     builtinBearGridImg,
   ],
-  () => requestAnimationFrame(drawPreview),
+  () => requestAnimationFrame(() => void drawPreview()),
   { deep: true },
 );
 
@@ -331,7 +367,7 @@ async function consumeSessionCapture() {
   if (data) {
     resetAllSettingsForNewCapture();
     screenshotDataUrl.value = data;
-    message.value = t('msg_tab_capture_loaded');
+    message.value = '';
   }
 }
 
@@ -366,6 +402,12 @@ function persistPrefs() {
         activeArrowId: activeArrowId.value,
         embedBrowserFrame: embedBrowserFrame.value,
         embedBrowserChromeColor: embedBrowserChromeColor.value,
+        customBgDataUrl: customBgDataUrl.value,
+        arrowEditColor: arrowEditColor.value,
+        arrowEditStrokeNorm: arrowEditStrokeNorm.value,
+        arrowEditHeadStyle: arrowEditHeadStyle.value,
+        arrowEditLineStyle: arrowEditLineStyle.value,
+        arrowEditOpacity: arrowEditOpacity.value,
       },
     });
   } catch {
@@ -481,6 +523,31 @@ onMounted(async () => {
     if (typeof s?.embedBrowserChromeColor === 'string') {
       embedBrowserChromeColor.value = String(s.embedBrowserChromeColor);
     }
+    if (typeof s?.customBgDataUrl === 'string' && s.customBgDataUrl.length > 0) {
+      customBgDataUrl.value = s.customBgDataUrl;
+    } else if (s?.customBgDataUrl === null) {
+      customBgDataUrl.value = null;
+    }
+    if (typeof s?.arrowEditColor === 'string' && s.arrowEditColor.trim()) {
+      arrowEditColor.value = s.arrowEditColor.trim();
+    }
+    if (typeof s?.arrowEditStrokeNorm === 'number' && Number.isFinite(s.arrowEditStrokeNorm)) {
+      arrowEditStrokeNorm.value = clampArrowEditStrokeNorm(s.arrowEditStrokeNorm);
+    }
+    const ah = s?.arrowEditHeadStyle;
+    if (typeof ah === 'string' && (ARROW_HEAD_IDS as readonly string[]).includes(ah)) {
+      arrowEditHeadStyle.value = ah as ArrowHeadStyleId;
+    }
+    const al = s?.arrowEditLineStyle;
+    if (typeof al === 'string' && (ARROW_LINE_IDS as readonly string[]).includes(al)) {
+      arrowEditLineStyle.value = al as ArrowLineStyleId;
+    }
+    if (typeof s?.arrowEditOpacity === 'number' && Number.isFinite(s.arrowEditOpacity)) {
+      arrowEditOpacity.value = clampArrowEditOpacity(s.arrowEditOpacity);
+    }
+    if (bgCategory.value === 'image' && customBgDataUrl.value) {
+      void refreshCustomBg();
+    }
   } catch {
     /* ignore */
   }
@@ -594,6 +661,12 @@ watch(
     activeArrowId,
     embedBrowserFrame,
     embedBrowserChromeColor,
+    customBgDataUrl,
+    arrowEditColor,
+    arrowEditStrokeNorm,
+    arrowEditHeadStyle,
+    arrowEditLineStyle,
+    arrowEditOpacity,
   ],
   () => persistPrefs(),
   { deep: true },
@@ -690,7 +763,7 @@ async function exportImage() {
   busy.value = true;
   try {
     const { width, height, label } = exportDims.value;
-    const canvas = compositeToCanvas(buildCompositeOptions(width, height, false));
+    const canvas = await compositeToCanvas(buildCompositeOptions(width, height, false));
     const blob = await canvasToPngBlob(canvas);
     const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
     downloadBlob(blob, `${t('export_filename_prefix')}-${stamp}.png`);
@@ -721,40 +794,105 @@ function previewFontPx(role: TextRole): number {
   return Math.max(10, (L.fontSize * ph) / 800);
 }
 
-/** 画布内联编辑：用实色与 caret 保证光标可见；导出仍按图层效果渲染 */
+/**
+ * 文案页内联编辑样式：尽量贴近 compositor drawTextLayer（渐变/金属等用 background-clip:text；
+ * 多行时渐变铺整块区域，与 canvas 按行渐变略有差异；导出仍以 canvas 为准）。
+ */
 function textCanvasStyle(role: TextRole): Record<string, string> {
   const L = layerForRole(role);
-  const fs = `${previewFontPx(role)}px`;
+  const fsNum = previewFontPx(role);
+  const fs = `${fsNum}px`;
+  const caretClip = themeDark.value ? '#cbd5e1' : '#334155';
+
   const base: Record<string, string> = {
     fontSize: fs,
     fontFamily: fontCssStack(L.fontId),
     fontWeight: L.bold ? '700' : '500',
     lineHeight: '1.35',
-    color: L.color,
-    opacity: String(L.opacity),
-    caretColor: L.color,
     textAlign: L.textAlign ?? 'left',
+    opacity: String(L.opacity),
+    backgroundRepeat: 'no-repeat',
   };
-  if (L.effect === 'crystal') {
-    base.textShadow =
-      '0 0 4px rgba(56,189,248,0.55), 0 0 1px rgba(255,255,255,0.6)';
-  } else if (L.effect === 'gradient') {
-    base.textShadow = '0 0 1px rgba(56,189,248,0.35)';
-  } else if (L.effect === 'metallic') {
-    base.textShadow = '0 1px 0 rgba(0,0,0,0.12)';
-  } else if (L.effect === 'neon') {
-    base.textShadow = `0 0 8px ${L.color}, 0 0 2px #fff`;
-  } else if (L.effect === 'outline') {
-    base.textShadow =
-      '1px 0 0 rgba(0,0,0,0.75), -1px 0 0 rgba(0,0,0,0.75), 0 1px 0 rgba(0,0,0,0.75), 0 -1px 0 rgba(0,0,0,0.75)';
-  } else if (L.effect === 'emboss') {
-    base.textShadow = '1px 1px 0 rgba(255,255,255,0.35), -1px -1px 0 rgba(0,0,0,0.25)';
-  } else if (L.effect === 'duotone') {
-    base.textShadow = '1px 1px 0 rgba(168,85,247,0.35)';
-  } else if (L.effect === 'shadowPop') {
-    base.textShadow = '3px 3px 0 rgba(0,0,0,0.25)';
+
+  const setClipText = (gradientCss: string): void => {
+    base.backgroundImage = gradientCss;
+    base.backgroundSize = '100% 100%';
+    base['-webkit-background-clip'] = 'text';
+    base['background-clip'] = 'text';
+    base['-webkit-text-fill-color'] = 'transparent';
+    base.color = 'transparent';
+    base.caretColor = caretClip;
+    base.textShadow = 'none';
+    base['-webkit-text-stroke'] = '0 transparent';
+    base.filter = 'none';
+  };
+
+  const setSolidFill = (): void => {
+    base.backgroundImage = 'none';
+    base.backgroundSize = 'auto';
+    base['-webkit-background-clip'] = 'border-box';
+    base['background-clip'] = 'border-box';
+    base['-webkit-text-fill-color'] = '';
+    base.color = L.color;
+    base.caretColor = L.color;
+    base['-webkit-text-stroke'] = '0 transparent';
+    base.filter = 'none';
+  };
+
+  switch (L.effect) {
+    case 'gradient':
+      setClipText(`linear-gradient(90deg, ${L.color}, #38bdf8)`);
+      return base;
+    case 'duotone':
+      setClipText(`linear-gradient(90deg, ${L.color}, #a855f7)`);
+      return base;
+    case 'metallic':
+      setClipText(
+        'linear-gradient(165deg, #57534e 0%, #fde68a 28%, #fffbeb 52%, #d97706 78%, #78350f 100%)',
+      );
+      return base;
+    case 'crystal': {
+      setClipText(
+        'linear-gradient(180deg, #a5f3fc 0%, #ffffff 45%, #e0f2fe 55%, #0284c7 100%)',
+      );
+      base.filter = `drop-shadow(0 0 ${Math.max(2, Math.round(fsNum / 4))}px rgba(56,189,248,0.55))`;
+      return base;
+    }
+    case 'emboss': {
+      setClipText(
+        `linear-gradient(180deg, #ffffff 0%, ${L.color} 48%, rgba(0,0,0,0.45) 100%)`,
+      );
+      base.textShadow = '0.5px 0.5px 0 rgba(255,255,255,0.22)';
+      return base;
+    }
+    case 'neon': {
+      setSolidFill();
+      const g1 = Math.max(4, Math.round(fsNum * 0.45));
+      const g2 = Math.max(2, Math.round(fsNum * 0.12));
+      base.textShadow = `0 0 ${g1}px ${L.color}, 0 0 ${g2}px rgba(255,255,255,0.95)`;
+      base.caretColor = '#f8fafc';
+      return base;
+    }
+    case 'outline': {
+      setSolidFill();
+      const sw = `${Math.max(1, Math.round(fsNum / 10))}px`;
+      base['-webkit-text-stroke'] = `${sw} rgba(0,0,0,0.85)`;
+      base['paint-order'] = 'stroke fill';
+      return base;
+    }
+    case 'shadowPop': {
+      setSolidFill();
+      const o = Math.max(1, Math.round(fsNum / 14));
+      base.textShadow = `${o}px ${o}px 0 rgba(0,0,0,0.52)`;
+      return base;
+    }
+    case 'solid':
+    default: {
+      setSolidFill();
+      base.textShadow = 'none';
+      return base;
+    }
   }
-  return base;
 }
 
 /** 透明度：数值越大越透明（0=完全不透明，100=全透明） */
@@ -782,6 +920,86 @@ const TEXT_EFFECT_IDS: TextEffect[] = [
   'duotone',
   'shadowPop',
 ];
+
+function clampArrowEditStrokeNorm(n: number): number {
+  if (!Number.isFinite(n)) return 0.0045;
+  return Math.min(0.02, Math.max(0.001, n));
+}
+
+function clampArrowEditOpacity(n: number): number {
+  if (!Number.isFinite(n)) return 1;
+  return Math.min(1, Math.max(0, n));
+}
+
+function snapshotPersistedChrome(): PersistedChromeSnapshot {
+  return {
+    showGrid: showGrid.value,
+    embedBrowserFrame: embedBrowserFrame.value,
+    embedBrowserChromeColor: embedBrowserChromeColor.value,
+    bgCategory: bgCategory.value,
+    bgStyleId: bgStyleId.value,
+    bgSolidId: bgSolidId.value,
+    solidCustomHex: solidCustomHex.value,
+    bgBuiltinImageId: bgBuiltinImageId.value,
+    customBgDataUrl: customBgDataUrl.value,
+    titleTextStyle: {
+      fontSize: titleLayer.fontSize,
+      fontId: titleLayer.fontId,
+      color: titleLayer.color,
+      opacity: titleLayer.opacity,
+      effect: titleLayer.effect,
+      bold: titleLayer.bold,
+      textAlign: titleLayer.textAlign,
+    },
+    subtitleTextStyle: {
+      fontSize: subtitleLayer.fontSize,
+      fontId: subtitleLayer.fontId,
+      color: subtitleLayer.color,
+      opacity: subtitleLayer.opacity,
+      effect: subtitleLayer.effect,
+      bold: subtitleLayer.bold,
+      textAlign: subtitleLayer.textAlign,
+    },
+    arrowEditColor: arrowEditColor.value,
+    arrowEditStrokeNorm: arrowEditStrokeNorm.value,
+    arrowEditHeadStyle: arrowEditHeadStyle.value,
+    arrowEditLineStyle: arrowEditLineStyle.value,
+    arrowEditOpacity: arrowEditOpacity.value,
+  };
+}
+
+function applyPersistedChrome(p: PersistedChromeSnapshot): void {
+  showGrid.value = p.showGrid;
+  embedBrowserFrame.value = p.embedBrowserFrame;
+  embedBrowserChromeColor.value = p.embedBrowserChromeColor.trim() || '#4b5563';
+  bgCategory.value = p.bgCategory;
+  bgStyleId.value = p.bgStyleId;
+  bgSolidId.value = p.bgSolidId;
+  solidCustomHex.value = p.solidCustomHex;
+  bgBuiltinImageId.value = p.bgBuiltinImageId;
+  customBgDataUrl.value = p.customBgDataUrl;
+  Object.assign(titleLayer, p.titleTextStyle);
+  Object.assign(subtitleLayer, p.subtitleTextStyle);
+  if (!TEXT_EFFECT_IDS.includes(titleLayer.effect)) titleLayer.effect = 'solid';
+  if (!TEXT_EFFECT_IDS.includes(subtitleLayer.effect)) subtitleLayer.effect = 'solid';
+  if (!FONT_IDS.includes(titleLayer.fontId)) titleLayer.fontId = 'notoSansSc';
+  if (!FONT_IDS.includes(subtitleLayer.fontId)) subtitleLayer.fontId = 'notoSansSc';
+  if (!TEXT_LAYER_ALIGNS.includes(titleLayer.textAlign)) titleLayer.textAlign = 'left';
+  if (!TEXT_LAYER_ALIGNS.includes(subtitleLayer.textAlign)) subtitleLayer.textAlign = 'left';
+  arrowEditColor.value =
+    typeof p.arrowEditColor === 'string' && p.arrowEditColor.trim() ? p.arrowEditColor.trim() : '#ef4444';
+  arrowEditStrokeNorm.value = clampArrowEditStrokeNorm(p.arrowEditStrokeNorm);
+  arrowEditHeadStyle.value = (ARROW_HEAD_IDS as readonly string[]).includes(p.arrowEditHeadStyle)
+    ? p.arrowEditHeadStyle
+    : 'triangle';
+  arrowEditLineStyle.value = (ARROW_LINE_IDS as readonly string[]).includes(p.arrowEditLineStyle)
+    ? p.arrowEditLineStyle
+    : 'straight';
+  arrowEditOpacity.value = clampArrowEditOpacity(p.arrowEditOpacity);
+  if (bgCategory.value === 'image' && customBgDataUrl.value) {
+    void refreshCustomBg();
+  }
+}
 
 function onTextPointerDown(e: PointerEvent, role: TextRole) {
   e.preventDefault();
@@ -1301,7 +1519,7 @@ let historyDebounceTimer: ReturnType<typeof setTimeout> | null = null;
 const HISTORY_DEBOUNCE_MS = 320;
 const HISTORY_MAX = 50;
 
-/** 新截图载入：默认版式/背景/文案/箭头/导出等待办项，并清空撤销栈与箭头绘制草稿 */
+/** 新截图载入：默认版式/文案占位与几何、导出等；保留网格/嵌入浏览器/背景/文案样式/箭头面板默认 */
 function resetAllSettingsForNewCapture() {
   closePreviewModal();
   if (historyDebounceTimer) {
@@ -1313,8 +1531,10 @@ function resetAllSettingsForNewCapture() {
   arrowDrawActive.value = false;
   arrowDrag.value = null;
   arrowLayerCursor.value = '';
+  const chromePrefs = snapshotPersistedChrome();
   isApplyingHistory.value = true;
   resetEditorSettingsToDefault();
+  applyPersistedChrome(chromePrefs);
   exportPreset.value = 'standard';
   customExportW.value = 1280;
   customExportH.value = 800;
@@ -1499,7 +1719,7 @@ async function openExportPreview() {
   message.value = '';
   try {
     const { width, height } = exportDims.value;
-    const canvas = compositeToCanvas(buildCompositeOptions(width, height, false));
+    const canvas = await compositeToCanvas(buildCompositeOptions(width, height, false));
     const blob = await canvasToPngBlob(canvas);
     if (previewModalUrl.value) URL.revokeObjectURL(previewModalUrl.value);
     previewModalUrl.value = URL.createObjectURL(blob);

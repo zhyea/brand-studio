@@ -1041,16 +1041,16 @@ type ScreenshotRegionValign = 'center' | 'bottom';
 const SCREENSHOT_DOWNSCALE_STEP = 1.72;
 
 /**
- * 将截图绘制到目标矩形（像素对齐）。在需要明显缩小时使用中间画布分步缩小再贴到 ctx。
+ * 将截图绘制到目标矩形（像素对齐）。优先用 createImageBitmap 高质量缩放；失败则分步 Canvas 缩小。
  */
-function drawScreenshotScaled(
+async function drawScreenshotScaled(
   ctx: CanvasRenderingContext2D,
   img: HTMLImageElement,
   destX: number,
   destY: number,
   destW: number,
   destH: number,
-): void {
+): Promise<void> {
   const iw = img.naturalWidth;
   const ih = img.naturalHeight;
   if (!iw || !ih) return;
@@ -1059,6 +1059,34 @@ function drawScreenshotScaled(
   const th = Math.max(1, Math.round(destH));
   const dx = Math.round(destX);
   const dy = Math.round(destY);
+
+  const downsampling = iw > tw || ih > th;
+  if (downsampling && typeof createImageBitmap === 'function') {
+    try {
+      const bmp = await createImageBitmap(img, {
+        resizeWidth: tw,
+        resizeHeight: th,
+        resizeQuality: 'high',
+      });
+      try {
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(bmp, dx, dy);
+      } finally {
+        bmp.close();
+      }
+      return;
+    } catch {
+      /* 回退到分步缩小 */
+    }
+  }
+
+  if (!downsampling) {
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, iw, ih, dx, dy, tw, th);
+    return;
+  }
 
   if (iw <= tw * SCREENSHOT_DOWNSCALE_STEP && ih <= th * SCREENSHOT_DOWNSCALE_STEP) {
     ctx.imageSmoothingEnabled = true;
@@ -1097,7 +1125,7 @@ function drawScreenshotScaled(
   ctx.drawImage(readFrom, 0, 0, rw, rh, dx, dy, tw, th);
 }
 
-function drawScreenshotRegion(
+async function drawScreenshotRegion(
   ctx: CanvasRenderingContext2D,
   W: number,
   H: number,
@@ -1108,7 +1136,7 @@ function drawScreenshotRegion(
   regionH: number,
   embed?: ScreenshotEmbedOptions,
   screenshotValign: ScreenshotRegionValign = 'center',
-): void {
+): Promise<void> {
   const iw = img.naturalWidth;
   const ih = img.naturalHeight;
   if (!iw || !ih) return;
@@ -1129,7 +1157,7 @@ function drawScreenshotRegion(
     ctx.save();
     roundRect(ctx, dx, dy, tw, th, corner);
     ctx.clip();
-    drawScreenshotScaled(ctx, img, dx, dy, tw, th);
+    await drawScreenshotScaled(ctx, img, dx, dy, tw, th);
     ctx.restore();
     ctx.save();
     roundRect(ctx, dx, dy, tw, th, corner);
@@ -1258,21 +1286,21 @@ function drawScreenshotRegion(
   ctx.clip();
   roundRect(ctx, ix0, iy0, tw, th, imgCorner);
   ctx.clip();
-  drawScreenshotScaled(ctx, img, ix0, iy0, tw, th);
+  await drawScreenshotScaled(ctx, img, ix0, iy0, tw, th);
   ctx.restore();
 }
 
 /** 通栏·上、顶栏·窄：截图区域与画布底边的间距（px），替代原按比例 padY */
 const SCREENSHOT_BOTTOM_GAP_TOP_STACK_LAYOUTS = 18;
 
-function compositeLayoutScreenshot(
+async function compositeLayoutScreenshot(
   ctx: CanvasRenderingContext2D,
   W: number,
   H: number,
   screenshot: HTMLImageElement,
   kind: LayoutKind,
   embed?: ScreenshotEmbedOptions,
-): void {
+): Promise<void> {
   const padX = W * 0.05;
   const padY = H * 0.06;
   const innerW = W - padX * 2;
@@ -1283,55 +1311,55 @@ function compositeLayoutScreenshot(
   switch (kind) {
     case 'split-text-right': {
       const leftW = split - padX * 1.1;
-      drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, leftW, innerH, embed);
+      await drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, leftW, innerH, embed);
       return;
     }
     case 'split-text-left': {
       const shotX = split + padX * 0.35;
       const shotW = W - shotX - padX;
-      drawScreenshotRegion(ctx, W, H, screenshot, shotX, padY, shotW, innerH, embed);
+      await drawScreenshotRegion(ctx, W, H, screenshot, shotX, padY, shotW, innerH, embed);
       return;
     }
     case 'centered-text-top': {
       const textH = Math.min(H * 0.2, 140);
       const shotTop = padY + textH + padY * 0.35;
       const shotH = Math.max(8, H - shotTop - SCREENSHOT_BOTTOM_GAP_TOP_STACK_LAYOUTS);
-      drawScreenshotRegion(ctx, W, H, screenshot, padX, shotTop, innerW, shotH, embed, 'bottom');
+      await drawScreenshotRegion(ctx, W, H, screenshot, padX, shotTop, innerW, shotH, embed, 'bottom');
       return;
     }
     case 'centered-text-bottom': {
       const textH = Math.min(H * 0.22, 160);
       const shotH = innerH - textH - padY * 0.5;
-      drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, innerW, shotH, embed);
+      await drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, innerW, shotH, embed);
       return;
     }
     case 'bleed-full': {
       const m = Math.min(W, H) * 0.02;
-      drawScreenshotRegion(ctx, W, H, screenshot, m, m, W - m * 2, H - m * 2, embed);
+      await drawScreenshotRegion(ctx, W, H, screenshot, m, m, W - m * 2, H - m * 2, embed);
       return;
     }
     case 'split-narrow-left': {
       const shotX = splitNarrow + padX * 0.35;
       const shotW = W - shotX - padX;
-      drawScreenshotRegion(ctx, W, H, screenshot, shotX, padY, shotW, innerH, embed);
+      await drawScreenshotRegion(ctx, W, H, screenshot, shotX, padY, shotW, innerH, embed);
       return;
     }
     case 'split-narrow-right': {
       const leftW = W * 0.72 - padX * 1.15;
-      drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, leftW, innerH, embed);
+      await drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, leftW, innerH, embed);
       return;
     }
     case 'stack-compact-top': {
       const textH = Math.min(H * 0.12, 100);
       const shotTop = padY + textH + padY * 0.25;
       const shotH = Math.max(8, H - shotTop - SCREENSHOT_BOTTOM_GAP_TOP_STACK_LAYOUTS);
-      drawScreenshotRegion(ctx, W, H, screenshot, padX, shotTop, innerW, shotH, embed, 'bottom');
+      await drawScreenshotRegion(ctx, W, H, screenshot, padX, shotTop, innerW, shotH, embed, 'bottom');
       return;
     }
     default: {
       const textH = Math.min(H * 0.22, 160);
       const shotH = innerH - textH - padY * 0.5;
-      drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, innerW, shotH, embed);
+      await drawScreenshotRegion(ctx, W, H, screenshot, padX, padY, innerW, shotH, embed);
     }
   }
 }
@@ -1965,7 +1993,7 @@ export function drawArrowsOnCanvas(
   }
 }
 
-export function compositeToCanvas(opts: CompositeOptions): HTMLCanvasElement {
+export async function compositeToCanvas(opts: CompositeOptions): Promise<HTMLCanvasElement> {
   const {
     width: W,
     height: H,
@@ -1992,7 +2020,7 @@ export function compositeToCanvas(opts: CompositeOptions): HTMLCanvasElement {
   const embedOpts: ScreenshotEmbedOptions | undefined = embedBrowserFrame
     ? { embedBrowser: true, browserChromeColor: embedBrowserChromeColor }
     : undefined;
-  compositeLayoutScreenshot(ctx, W, H, screenshot, layoutKind, embedOpts);
+  await compositeLayoutScreenshot(ctx, W, H, screenshot, layoutKind, embedOpts);
 
   if (!skipText) {
     drawTextLayer(ctx, W, H, titleLayer);

@@ -1,0 +1,55 @@
+================================================================================
+Chrome Web Store — Single purpose & permission rationales (English)
+Extension: BrandStudio / Showcase Capture Studio
+================================================================================
+
+
+--------------------------------------------------------------------------------
+SINGLE PURPOSE
+--------------------------------------------------------------------------------
+This extension has a single, narrow purpose: when the user explicitly clicks the
+extension toolbar button, it captures the visible area of the currently active
+browser tab, opens the extension’s own editor page, and lets the user compose
+and export a promotional or showcase image (layouts, backgrounds, text, arrows,
+PNG export). It does not run continuously in web pages, inject ads, modify
+unrelated sites, or collect browsing history for unrelated purposes.
+
+
+--------------------------------------------------------------------------------
+activeTab
+--------------------------------------------------------------------------------
+Justification:
+The extension only captures a screenshot when the user invokes the toolbar
+action. The "activeTab" permission allows chrome.tabs.captureVisibleTab() to read
+the visible pixels of the tab that is active at that moment, for the duration of
+that user gesture. No broad host permissions are requested; access is limited to
+the tab the user chose to capture by clicking the icon.
+
+
+--------------------------------------------------------------------------------
+storage
+--------------------------------------------------------------------------------
+Justification:
+"storage" (chrome.storage.local and chrome.storage.session) is used entirely on
+the client to (1) persist editor preferences—such as layout, background choices,
+text styling defaults, arrow defaults, theme, and grid options—so settings survive
+browser restarts, and (2) pass the latest PNG data URL from the background service
+worker to the editor tab immediately after a capture via session storage. No data is
+synced to an extension-operated remote server by this permission alone.
+
+
+--------------------------------------------------------------------------------
+tabs
+--------------------------------------------------------------------------------
+Justification:
+The "tabs" permission is used only to open or focus the extension’s editor page
+after a capture: the background script queries tabs to see whether an editor tab
+is already open (same extension URL) and either activates that tab or creates a
+new tab pointing to the local editor HTML. It is not used to read the contents of
+arbitrary websites in the background, track URLs for advertising, or bulk-harvest
+tab metadata beyond what is needed to route the user to the editor.
+
+
+================================================================================
+End of file
+================================================================================

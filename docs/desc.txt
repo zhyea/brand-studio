@@ -1,0 +1,320 @@
+================================================================================
+BrandStudio / Showcase Capture Studio — Extension description (all locales)
+================================================================================
+This file is for humans & store copy. Chrome UI strings live in public/_locales/*.
+
+
+--------------------------------------------------------------------------------
+[en] English
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) is a Chrome extension that captures your current browser tab and turns it into a polished promotional or showcase image.
+
+How to use
+1. Open the page you want in the tab.
+2. Click the extension icon on the toolbar. Chrome captures the visible area of that tab and opens the editor (or focuses it if it is already open).
+3. Pick a layout, a background (gradients, solid colors, built‑in textures, or your own image), title and subtitle text (font, size, color, transparency, effects), and optional arrows.
+4. Optionally show an alignment grid, wrap the screenshot in a decorative browser frame, and choose the frame color.
+5. Preview the result, then export a PNG. Presets include common store promo sizes (e.g. thumbnail, standard, HD); you can also set custom width and height.
+
+Features (summary)
+• Several composition layouts (split text left/right, text above or below the shot, narrow split, full bleed, compact stack, etc.).
+• Rich backgrounds and optional grid overlay while editing.
+• Text styling that matches the exported canvas as closely as possible in the editor.
+• Arrows with multiple head shapes and line styles.
+• Light and dark UI themes; many choices (grid, embed browser, background, text style, arrow defaults, etc.) are saved in local storage and kept when you capture a new tab.
+• Session storage briefly holds the latest capture so the editor can open right after you click the icon.
+
+Privacy & data
+The extension captures only what you trigger via the toolbar action. The image is passed to the editor tab on your device. Preferences are stored locally in Chrome (local/session storage); nothing is sent to a remote server by this extension.
+
+
+--------------------------------------------------------------------------------
+[zh_CN] 简体中文
+--------------------------------------------------------------------------------
+BrandStudio（Showcase Capture Studio）是一款 Chrome 扩展，用于截取当前浏览器标签页的可见区域，并制作成适合应用商店、宣传物料或作品展示的配图。
+
+使用方法
+1. 在要展示的标签页中打开目标网页。
+2. 点击工具栏上的扩展图标。Chrome 会截取该标签页的可见区域，并打开编辑器标签页（若已打开则会切到该页）。
+3. 选择版式、背景（渐变、实色、内置纹理或自定义图片）、主标题与副标题（字体、字号、颜色、透明度、效果），并可添加箭头标注。
+4. 可选：显示对齐网格、为截图套上装饰性「浏览器窗口」外框并设置外框颜色。
+5. 预览合成效果后导出 PNG。内置多种商店推广常用尺寸（如缩略图、标准、高清），也支持自定义宽高。
+
+功能概要
+• 多种版式（左右分栏、标题在上下方、窄分栏、通栏铺满、紧凑顶栏等）。
+• 丰富背景与编辑时可选网格。
+• 文案样式在编辑区尽量接近最终画布导出效果。
+• 多种箭头头部与线条样式。
+• 亮色 / 暗色主题；网格、嵌入浏览器、背景、文案样式、箭头等多数选项会保存在本机，更换新截图时仍会保留。
+• 新截取的画面通过会话存储短暂传递以便立刻进入编辑。
+
+隐私与数据
+仅在您点击工具栏按钮时截取当前标签页可见内容；数据在您本机的浏览器中处理。偏好保存在 Chrome 本地存储中；本扩展不向自有服务器上传截图内容。
+
+
+--------------------------------------------------------------------------------
+[zh_TW] 繁體中文
+--------------------------------------------------------------------------------
+BrandStudio（Showcase Capture Studio）是 Chrome 擴充功能，可擷取目前分頁的可見畫面，製作適合商店上架、宣傳或作品展示的圖片。
+
+使用方式
+1. 在要呈現的分頁開啟目標網頁。
+2. 點選工具列上的擴充功能圖示。Chrome 會擷取該分頁可見區域，並開啟編輯器分頁（若已開啟則切換到該分頁）。
+3. 選擇版型、背景（漸層、實色、內建紋理或自訂圖片）、主標與副標（字型、字級、色彩、透明度、效果），並可加入箭頭標註。
+4. 選用：顯示對齊格線、為擷圖加上裝飾性「瀏覽器視窗」外框並設定外框色彩。
+5. 預覽後匯出 PNG。內建多種商店常用尺寸（如縮圖、標準、高畫質），亦支援自訂寬高。
+
+功能重點
+• 多種版型（左右分欄、標題在上下方、窄分欄、全幅、頂部緊湊等）。
+• 多樣背景與編輯時可選格線。
+• 文案樣式在編輯區盡量貼近最終畫布輸出。
+• 多種箭頭樣式與線條。
+• 淺色／深色介面；格線、嵌入瀏覽器、背景、文案樣式、箭頭預設等多數選項會儲存在本機，擷取新畫面時仍會保留。
+• 新擷取透過工作階段儲存暫存以便立即編輯。
+
+隱私與資料
+僅在您點選工具列動作時擷取目前分頁；資料於本機瀏覽器處理。偏好設定存於 Chrome 本機儲存；此擴充功能不將擷圖內容上傳至遠端伺服器。
+
+
+--------------------------------------------------------------------------------
+[es] Español
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) es una extensión de Chrome que captura la pestaña visible del navegador y la convierte en una imagen promocional o de presentación lista para usar.
+
+Uso
+1. Abre la página en la pestaña deseada.
+2. Haz clic en el icono de la extensión en la barra de herramientas. Chrome captura el área visible y abre el editor (o lo enfoca si ya está abierto).
+3. Elige diseño, fondo (degradados, colores planos, texturas integradas o tu imagen), títulos y subtítulos (tipografía, tamaño, color, transparencia, efectos) y flechas opcionales.
+4. Opcional: cuadrícula de alineación, marco decorativo tipo ventana del navegador y color del marco.
+5. Previsualiza y exporta PNG con tamaños predefinidos para tiendas o dimensiones personalizadas.
+
+Funciones
+• Varios diseños de composición.
+• Fondos variados y cuadrícula opcional al editar.
+• Estilos de texto alineados con el lienzo final.
+• Flechas con distintas cabezas y trazos.
+• Tema claro/oscuro; muchas opciones se guardan en local y se conservan al capturar de nuevo.
+• La captura reciente se guarda brevemente en almacenamiento de sesión.
+
+Privacidad
+Solo se captura cuando tú activas la acción. Los datos se procesan en tu dispositivo; las preferencias quedan en el almacenamiento local de Chrome. Esta extensión no envía las capturas a un servidor propio.
+
+
+--------------------------------------------------------------------------------
+[fr] Français
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) est une extension Chrome qui capture l’onglet actuel du navigateur et en fait une image promotionnelle ou de mise en avant soignée.
+
+Utilisation
+1. Ouvrez la page dans l’onglet souhaité.
+2. Cliquez sur l’icône de l’extension dans la barre d’outils. Chrome capture la zone visible et ouvre l’éditeur (ou l’active s’il est déjà ouvert).
+3. Choisissez une mise en page, un fond (dégradés, aplats, textures intégrées ou image perso), titres et sous-titres (police, taille, couleur, transparence, effets) et des flèches facultatives.
+4. En option : grille d’alignement, cadre décoratif type fenêtre de navigateur et couleur du chrome.
+5. Prévisualisez puis exportez un PNG (préréglages pour stores ou dimensions personnalisées).
+
+Fonctionnalités
+• Plusieurs compositions.
+• Arrière-plans riches et grille optionnelle.
+• Styles de texte proches du rendu final sur canevas.
+• Flèches (formes de tête et styles de trait).
+• Thème clair/sombre ; nombre de réglages sont conservés en local entre les captures.
+• La dernière capture transite brièvement via le stockage de session.
+
+Confidentialité
+La capture n’a lieu que lorsque vous déclenchez l’action. Traitement sur votre appareil ; préférences en stockage local. Aucun envoi des captures vers un serveur de l’extension.
+
+
+--------------------------------------------------------------------------------
+[de] Deutsch
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) ist eine Chrome-Erweiterung, die den sichtbaren Bereich des aktuellen Tabs erfasst und daraus ein aufbereitetes Promo- oder Showcase-Bild macht.
+
+Bedienung
+1. Öffnen Sie die gewünschte Seite im Tab.
+2. Klicken Sie auf das Erweiterungssymbol in der Symbolleiste. Chrome erfasst den sichtbaren Bereich und öffnet den Editor (oder fokussiert ihn).
+3. Layout, Hintergrund (Verläufe, Vollton, integrierte Texturen oder eigenes Bild), Titel und Untertitel (Schrift, Größe, Farbe, Transparenz, Effekte) sowie optionale Pfeile wählen.
+4. Optional: Ausrichtungsraster, dekorativer Browserfenster-Rahmen und Rahmenfarbe.
+5. Vorschau und PNG-Export mit Store-Voreinstellungen oder benutzerdefinierten Maßen.
+
+Funktionen
+• Mehrere Layouts.
+• Viele Hintergründe, optionales Raster beim Bearbeiten.
+• Textdarstellung möglichst nah am exportierten Canvas.
+• Pfeile mit verschiedenen Köpfen und Linienstilen.
+• Helles/Dunkles Thema; viele Einstellungen bleiben lokal zwischen Aufnahmen erhalten.
+• Die aktuelle Aufnahme wird kurz in der Session zwischengespeichert.
+
+Datenschutz
+Erfassung nur auf Ihre Aktion hin; Verarbeitung lokal auf Ihrem Gerät; Einstellungen im lokalen Speicher von Chrome. Diese Erweiterung lädt keine Screenshots auf einen eigenen Server hoch.
+
+
+--------------------------------------------------------------------------------
+[it] Italiano
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) è un’estensione Chrome che acquisisce la scheda del browser visibile e la trasforma in un’immagine promozionale o di presentazione curata.
+
+Utilizzo
+1. Apri la pagina nella scheda desiderata.
+2. Fai clic sull’icona dell’estensione nella barra degli strumenti. Chrome acquisisce l’area visibile e apre l’editor (o la mette a fuoco se è già aperta).
+3. Scegli layout, sfondo (gradienti, tinte piene, trame integrate o immagine personalizzata), titolo e sottotitolo (carattere, dimensione, colore, trasparenza, effetti) e frecce opzionali.
+4. Opzionale: griglia di allineamento, cornice decorativa tipo finestra del browser e colore della cornice.
+5. Anteprima ed esportazione PNG con preset per store o dimensioni personalizzate.
+
+Funzionalità
+• Più layout di composizione.
+• Sfondi ricchi e griglia opzionale in modifica.
+• Stili di testo vicini al canvas finale.
+• Frecce con diverse punte e linee.
+• Tema chiaro/scuro; molte opzioni restano salvate in locale tra una cattura e l’altra.
+• L’ultima acquisizione transita brevemente nella sessione.
+
+Privacy
+L’acquisizione avviene solo quando avvii l’azione. Dati elaborati sul dispositivo; preferenze in archiviazione locale. L’estensione non invia gli screenshot a un server remoto proprio.
+
+
+--------------------------------------------------------------------------------
+[pt_BR] Português (Brasil)
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) é uma extensão do Chrome que captura a aba visível do navegador e a transforma em uma imagem promocional ou de vitrine.
+
+Como usar
+1. Abra a página na aba desejada.
+2. Clique no ícone da extensão na barra de ferramentas. O Chrome captura a área visível e abre o editor (ou foca se já estiver aberto).
+3. Escolha o layout, o fundo (degradês, cores sólidas, texturas integradas ou sua imagem), título e subtítulo (fonte, tamanho, cor, transparência, efeitos) e setas opcionais.
+4. Opcional: grade de alinhamento, moldura decorativa tipo janela do navegador e cor do contorno.
+5. Visualize e exporte PNG com tamanhos predefinidos para lojas ou dimensões personalizadas.
+
+Recursos
+• Vários layouts de composição.
+• Fundos variados e grade opcional ao editar.
+• Estilos de texto próximos ao canvas final.
+• Setas com várias pontas e estilos de linha.
+• Tema claro/escuro; muitas opções ficam salvas localmente entre capturas.
+• A captura recente passa brevemente pelo armazenamento de sessão.
+
+Privacidade
+A captura só ocorre quando você aciona o botão. Processamento no seu dispositivo; preferências no armazenamento local do Chrome. Esta extensão não envia capturas para um servidor próprio.
+
+
+--------------------------------------------------------------------------------
+[ru] Русский
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) — расширение для Chrome, которое делает снимок видимой области текущей вкладки и превращает его в аккуратное промо- или презентационное изображение.
+
+Как пользоваться
+1. Откройте нужную страницу во вкладке.
+2. Нажмите значок расширения на панели инструментов. Chrome захватывает видимую область и открывает редактор (или переключается на него).
+3. Выберите макет, фон (градиенты, заливки, встроенные текстуры или свой снимок), заголовок и подзаголовок (шрифт, размер, цвет, прозрачность, эффекты), при необходимости — стрелки.
+4. По желанию: сетка выравнивания, декоративная рамка «окна браузера» и цвет рамки.
+5. Предпросмотр и экспорт PNG с пресетами для витрин или своими размерами.
+
+Возможности
+• Несколько компоновок.
+• Богатый выбор фонов и опциональная сетка при правке.
+• Стили текста, близкие к итоговому холсту.
+• Стрелки с разными наконечниками и линиями.
+• Светлая/тёмная тема; многие настройки сохраняются локально между захватами.
+• Последний снимок кратко хранится в сессии.
+
+Конфиденциальность
+Захват только по вашему действию. Обработка на устройстве; настройки — в локальном хранилище Chrome. Расширение не отправляет скриншоты на собственный сервер.
+
+
+--------------------------------------------------------------------------------
+[ja] 日本語
+--------------------------------------------------------------------------------
+BrandStudio（Showcase Capture Studio）は、現在のブラウザタブの表示領域をキャプチャし、ストア掲載や紹介用に整えた画像を作る Chrome 拡張機能です。
+
+使い方
+1. 取り込みたいページをタブで開きます。
+2. ツールバーの拡張機能アイコンをクリックします。表示中の領域が撮影され、エディターが開きます（既に開いている場合は前面に出ます）。
+3. レイアウト、背景（グラデーション、単色、組み込みテクスチャ、または独自画像）、タイトル／サブタイトル（フォント、サイズ、色、透明度、エフェクト）、必要なら矢印を設定します。
+4. 任意で、合わせ用のグリッド表示、装飾的なブラウザ枠、枠の色を選べます。
+5. プレビュー後に PNG を書き出します。ストア向けプリセット解像度やカスタム幅・高さに対応します。
+
+主な機能
+• 複数の合成レイアウト。
+• 豊富な背景と編集時のグリッド表示。
+• 書き出しキャンバスに近いテキスト表現。
+• 矢印の頭形状・線種のバリエーション。
+• ライト／ダークテーマ。グリッド、埋め込みブラウザ枠、背景、テキストや矢印の既定など多くの設定はローカルに保持され、新しいキャプチャ後も引き継がれます。
+• 最新のキャプチャはセッションストレージに短時間保持され、すぐ編集できます。
+
+プライバシー
+撮影はユーザー操作時のみ。データは端末上の Chrome 内で処理され、設定はローカルに保存されます。本拡張機能はスクリーンショットを自社サーバーへ送信しません。
+
+
+--------------------------------------------------------------------------------
+[ko] 한국어
+--------------------------------------------------------------------------------
+BrandStudio(Showcase Capture Studio)는 현재 브라우저 탭의 보이는 영역을 캡처해 스토어 홍보·소개용 이미지로 다듬는 Chrome 확장 프로그램입니다.
+
+사용 방법
+1. 원하는 페이지를 탭에서 엽니다.
+2. 도구 모음의 확장 프로그램 아이콘을 클릭합니다. Chrome이 보이는 영역을 캡처하고 편집기 탭을 엽니다(이미 열려 있으면 포커스만 이동).
+3. 레이아웃, 배경(그라데이션, 단색, 내장 질감 또는 사용자 이미지), 제목·부제목(글꼴, 크기, 색, 투명도, 효과), 필요 시 화살표를 설정합니다.
+4. 선택: 정렬 격자 표시, 장식용 브라우저 창 테두리 및 테두리 색.
+5. 미리 보기 후 PNG로보냅니다. 스토어용 프리셋 크기 또는 사용자 지정 가로·세로를 지원합니다.
+
+기능 요약
+• 여러 합성 레이아웃.
+• 다양한 배경과 편집 시 격자 표시.
+• 최종 캔버스에 가까운 텍스트 스타일.
+• 여러 화살촉·선 스타일.
+• 밝은/어두운 테마. 격자, 브라우저 프레임, 배경, 텍스트·화살표 기본값 등 많은 설정이 로컬에 저장되어 새 캡처 후에도 유지됩니다.
+• 최근 캡처는 세션 저장소에 잠시 보관되어 바로 편집할 수 있습니다.
+
+개인정보
+캡처는 사용자가 버튼을 눌렀을 때만 수행됩니다. 데이터는 기기의 Chrome 안에서 처리되고, 설정은 로컬에 저장됩니다. 이 확장 프로그램은 스크린샷을 자체 서버로 보내지 않습니다.
+
+
+--------------------------------------------------------------------------------
+[ar] العربية
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) امتداد لمتصفح Chrome يلتقط المنطقة الظاهرة من علامة التبويب الحالية ويحوّلها إلى صورة ترويجية أو عرض احترافية.
+
+طريقة الاستخدام
+1) افتح الصفحة في التبويب المطلوب.
+2) انقر أيقونة الامتداد في شريط الأدوات. يلتقط Chrome المنطقة الظاهرة ويفتح المحرّر (أو ينقل التركيز إليه إن كان مفتوحًا).
+3) اختر التخطيط والخلفية (تدرجات، ألوان مسطحة، قوام مدمج، أو صورتك) والعنوان والعنوان الفرعي (الخط، الحجم، اللون، الشفافية، التأثيرات) والأسهم اختياريًا.
+4) اختياري: شبكة محاذاة، إطار نافذة متصفح زخرفي ولون الإطار.
+5) معاينة ثم تصدير PNG بأحجام جاهزة للمتاجر أو أبعاد مخصصة.
+
+الميزات
+• تخطيطات تركيب متعددة.
+• خلفيات غنية وشبكة اختيارية أثناء التحرير.
+• أنماط نص قريبة من اللوحة النهائية.
+• أسهم برؤوس وخطوط متنوعة.
+• سمة فاتحة/داكنة؛ يُحفظ الكثير من الإعدادات محليًا بين الالتقاطات.
+• يُخزَّن آخر التقاط مؤقتًا في تخزين الجلسة.
+
+الخصوصية
+يحدث الالتقاط فقط عند تنفيذك للإجراء. تتم المعالجة على جهازك؛ التفضيلات في التخزين المحلي لـ Chrome. لا يرسل هذا الامتداد لقطات الشاشة إلى خادم بعيد تابع له.
+
+
+--------------------------------------------------------------------------------
+[hi] हिन्दी
+--------------------------------------------------------------------------------
+BrandStudio (Showcase Capture Studio) एक Chrome एक्सटेंशन है जो आपके मौजूदा टैब के दिखाई देने वाले हिस्से को कैप्चर करके उसे प्रचार या प्रदर्शन के लिए तैयार छवि बनाता है।
+
+इस्तेमाल
+1) वह पेज टैब में खोलें जिसे आप दिखाना चाहते हैं।
+2) टूलबार पर एक्सटेंशन आइकन पर क्लिक करें। Chrome दिखाई क्षेत्र कैप्चर करके संपादक खोलता है (पहले से खुला हो तो फ़ोकस करता है)।
+3) लेआउट, पृष्ठभूमि (ग्रेडिएंट, ठोस रंग, अंतर्निहित बनावट या आपकी छवि), शीर्षक व उपशीर्षक (फ़ॉन्ट, आकार, रंग, पारदर्शिता, प्रभाव) और वैकल्पिक तीर चुनें।
+4) वैकल्पिक: संरेखण ग्रिड, सजावटी ब्राउज़र-खिड़की फ़्रेम और रंग।
+5) पूर्वावलोकन करें और PNG निर्यात करें—स्टोर के लिए पूर्वनिर्धारित आकार या कस्टम चौड़ाई-ऊँचाई।
+
+विशेषताएँ
+• कई संयोजन लेआउट।
+• समृद्ध पृष्ठभूमि और संपादन के दौरान वैकल्पिक ग्रिड।
+• अंतिम कैनवास के करीब टेक्स्ट शैली।
+• विभिन्न तीर-सिर और रेखा शैलियाँ।
+• हल्का/गहरा थीम; कई सेटिंग्स स्थानीय रूप से सहेजी जाती हैं।
+• नवीनतम कैप्चर सत्र संग्रह में संक्षिप्त रखा जाता है।
+
+गोपनीयता
+कैप्चर केवल जब आप बटन से चालू करें। डेटा आपके डिवाइस पर संसाधित; प्राथमिकताएँ Chrome स्थानीय संग्रह में। यह एक्सटेंशन स्क्रीनशॉट अपने सर्वर पर नहीं भेजता।
+
+================================================================================
+End of file
+================================================================================
