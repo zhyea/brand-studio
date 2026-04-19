@@ -1037,6 +1037,66 @@ function drawBackground(ctx: CanvasRenderingContext2D, w: number, h: number, o: 
 
 type ScreenshotRegionValign = 'center' | 'bottom';
 
+/** 单次巨幅缩小易产生柔边；分步缩小以保留更多高频细节 */
+const SCREENSHOT_DOWNSCALE_STEP = 1.72;
+
+/**
+ * 将截图绘制到目标矩形（像素对齐）。在需要明显缩小时使用中间画布分步缩小再贴到 ctx。
+ */
+function drawScreenshotScaled(
+  ctx: CanvasRenderingContext2D,
+  img: HTMLImageElement,
+  destX: number,
+  destY: number,
+  destW: number,
+  destH: number,
+): void {
+  const iw = img.naturalWidth;
+  const ih = img.naturalHeight;
+  if (!iw || !ih) return;
+
+  const tw = Math.max(1, Math.round(destW));
+  const th = Math.max(1, Math.round(destH));
+  const dx = Math.round(destX);
+  const dy = Math.round(destY);
+
+  if (iw <= tw * SCREENSHOT_DOWNSCALE_STEP && ih <= th * SCREENSHOT_DOWNSCALE_STEP) {
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, iw, ih, dx, dy, tw, th);
+    return;
+  }
+
+  let readFrom: CanvasImageSource = img;
+  let rw = iw;
+  let rh = ih;
+
+  while (rw > tw * SCREENSHOT_DOWNSCALE_STEP || rh > th * SCREENSHOT_DOWNSCALE_STEP) {
+    const nw = Math.max(tw, Math.floor(rw / 2));
+    const nh = Math.max(th, Math.floor(rh / 2));
+    const next = document.createElement('canvas');
+    next.width = nw;
+    next.height = nh;
+    const nctx = next.getContext('2d');
+    if (!nctx) {
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = 'high';
+      ctx.drawImage(img, 0, 0, iw, ih, dx, dy, tw, th);
+      return;
+    }
+    nctx.imageSmoothingEnabled = true;
+    nctx.imageSmoothingQuality = 'high';
+    nctx.drawImage(readFrom, 0, 0, rw, rh, 0, 0, nw, nh);
+    readFrom = next;
+    rw = nw;
+    rh = nh;
+  }
+
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(readFrom, 0, 0, rw, rh, dx, dy, tw, th);
+}
+
 function drawScreenshotRegion(
   ctx: CanvasRenderingContext2D,
   W: number,
@@ -1054,20 +1114,25 @@ function drawScreenshotRegion(
   if (!iw || !ih) return;
 
   if (!embed?.embedBrowser) {
-    const scale = Math.min(regionW / iw, regionH / ih);
-    const dw = iw * scale;
-    const dh = ih * scale;
-    const dx = x + (regionW - dw) / 2;
+    /** 不超过 1，避免低分辨率截图被放大填满区域导致发糊 */
+    const scale = Math.min(1, regionW / iw, regionH / ih);
+    const dwFit = iw * scale;
+    const dhFit = ih * scale;
+    const tw = Math.max(1, Math.round(dwFit));
+    const th = Math.max(1, Math.round(dhFit));
+    const dx = Math.round(x + (regionW - tw) / 2);
     const dy =
-      screenshotValign === 'bottom' ? y + regionH - dh : y + (regionH - dh) / 2;
+      screenshotValign === 'bottom'
+        ? Math.round(y + regionH - th)
+        : Math.round(y + (regionH - th) / 2);
     const corner = Math.max(8, Math.min(20, W * 0.015));
     ctx.save();
-    roundRect(ctx, dx, dy, dw, dh, corner);
+    roundRect(ctx, dx, dy, tw, th, corner);
     ctx.clip();
-    ctx.drawImage(img, dx, dy, dw, dh);
+    drawScreenshotScaled(ctx, img, dx, dy, tw, th);
     ctx.restore();
     ctx.save();
-    roundRect(ctx, dx, dy, dw, dh, corner);
+    roundRect(ctx, dx, dy, tw, th, corner);
     ctx.strokeStyle = 'rgba(255,255,255,0.35)';
     ctx.lineWidth = Math.max(1, W / 640);
     ctx.stroke();
@@ -1178,16 +1243,22 @@ function drawScreenshotRegion(
   ctx.stroke();
   ctx.restore();
 
-  const dw = cw;
-  const dh = ch;
-  const imgCorner = Math.max(4, Math.min(14, Math.min(dw, dh) * 0.035));
+  /** 视口内「包含」截图，不放大超过截图原始像素，避免 capture 分辨率低于合成画布时糊边 */
+  const fit = Math.min(1, cw / iw, ch / ih);
+  const dwFit = iw * fit;
+  const dhFit = ih * fit;
+  const tw = Math.max(1, Math.round(dwFit));
+  const th = Math.max(1, Math.round(dhFit));
+  const ix0 = Math.round(ix + (cw - tw) / 2);
+  const iy0 = Math.round(iy + (ch - th) / 2);
+  const imgCorner = Math.max(4, Math.min(14, Math.min(tw, th) * 0.035));
 
   ctx.save();
   roundRect(ctx, ix, iy, cw, ch, innerR);
   ctx.clip();
-  roundRect(ctx, ix, iy, dw, dh, imgCorner);
+  roundRect(ctx, ix0, iy0, tw, th, imgCorner);
   ctx.clip();
-  ctx.drawImage(img, ix, iy, dw, dh);
+  drawScreenshotScaled(ctx, img, ix0, iy0, tw, th);
   ctx.restore();
 }
 
@@ -1914,6 +1985,8 @@ export function compositeToCanvas(opts: CompositeOptions): HTMLCanvasElement {
   canvas.height = H;
   const ctx = canvas.getContext('2d');
   if (!ctx) throw new Error('Canvas unsupported');
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
 
   drawBackground(ctx, W, H, opts);
   const embedOpts: ScreenshotEmbedOptions | undefined = embedBrowserFrame
@@ -1957,8 +2030,15 @@ export function downloadBlob(blob: Blob, filename: string): void {
 export function loadImageFromDataUrl(dataUrl: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.onload = () => resolve(img);
     img.onerror = () => reject(new Error('Image load failed'));
+    img.onload = () => {
+      const finish = () => resolve(img);
+      if (typeof img.decode === 'function') {
+        void img.decode().then(finish).catch(finish);
+        return;
+      }
+      finish();
+    };
     img.src = dataUrl;
   });
 }

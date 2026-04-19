@@ -254,6 +254,9 @@ function buildCompositeOptions(
   };
 }
 
+/** 主画布预览合成像素上限（避免极大自定义导出时卡死主线程） */
+const PREVIEW_COMPOSITE_MAX_PIXELS = 6_000_000;
+
 function drawPreview() {
   const canvas = previewCanvas.value;
   const img = screenshotImg.value;
@@ -263,14 +266,18 @@ function drawPreview() {
   const r = Math.min(maxSide / ew, maxSide / eh, 1);
   const pw = Math.round(ew * r);
   const ph = Math.round(eh * r);
-  const dpr = Math.min(typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1, 2.5);
-  const bw = Math.max(1, Math.round(pw * dpr));
-  const bh = Math.max(1, Math.round(ph * dpr));
+  const exportArea = ew * eh;
+  const previewScale =
+    exportArea > PREVIEW_COMPOSITE_MAX_PIXELS
+      ? Math.sqrt(PREVIEW_COMPOSITE_MAX_PIXELS / exportArea)
+      : 1;
+  const compW = Math.max(1, Math.round(ew * previewScale));
+  const compH = Math.max(1, Math.round(eh * previewScale));
   /** 文案仅「文案」页用 DOM 编辑；箭头仅「箭头」页用 SVG 交互；版式/背景页画布需含全部内容 */
   const m = activeMenu.value;
   const skipText = m === 'description';
   const skipArrows = m === 'arrows';
-  const c = compositeToCanvas(buildCompositeOptions(bw, bh, skipText, skipArrows));
+  const c = compositeToCanvas(buildCompositeOptions(compW, compH, skipText, skipArrows));
   canvas.width = c.width;
   canvas.height = c.height;
   canvas.style.width = `${pw}px`;

@@ -23,15 +23,35 @@ const studio = useStudio();
               </span>
             </button>
           </div>
-          <label class="props-toggle-row">
-            <span>{{ studio.t('show_grid') }}</span>
-            <input v-model="studio.showGrid" type="checkbox" class="toggle-switch" />
-          </label>
+          <div
+            class="props-toggle-row props-toggle-row--switch"
+            role="switch"
+            tabindex="0"
+            :aria-checked="studio.showGrid"
+            aria-labelledby="layout-show-grid-label"
+            @click="studio.showGrid = !studio.showGrid"
+            @keydown.enter.prevent="studio.showGrid = !studio.showGrid"
+            @keydown.space.prevent="studio.showGrid = !studio.showGrid"
+          >
+            <span id="layout-show-grid-label" class="props-toggle-row-label">{{ studio.t('show_grid') }}</span>
+            <span class="switch" :class="{ on: studio.showGrid }" aria-hidden="true" />
+          </div>
           <template v-if="studio.screenshotImg">
-            <label class="props-toggle-row">
-              <span>{{ studio.t('layout_embed_browser') }}</span>
-              <input v-model="studio.embedBrowserFrame" type="checkbox" class="toggle-switch" />
-            </label>
+            <div
+              class="props-toggle-row props-toggle-row--switch"
+              role="switch"
+              tabindex="0"
+              :aria-checked="studio.embedBrowserFrame"
+              aria-labelledby="layout-embed-browser-label"
+              @click="studio.embedBrowserFrame = !studio.embedBrowserFrame"
+              @keydown.enter.prevent="studio.embedBrowserFrame = !studio.embedBrowserFrame"
+              @keydown.space.prevent="studio.embedBrowserFrame = !studio.embedBrowserFrame"
+            >
+              <span id="layout-embed-browser-label" class="props-toggle-row-label">{{
+                studio.t('layout_embed_browser')
+              }}</span>
+              <span class="switch" :class="{ on: studio.embedBrowserFrame }" aria-hidden="true" />
+            </div>
             <p class="props-hint">{{ studio.t('layout_embed_browser_hint') }}</p>
             <div v-if="studio.embedBrowserFrame" class="prop-row">
               <label class="prop-label">{{ studio.t('layout_browser_chrome_color') }}</label>

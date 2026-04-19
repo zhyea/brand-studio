@@ -5,3 +5,7 @@ dist/
 !/dist/
 !/node_modules/
 !/package-lock.json
+
+.idea
+dist
+node_modules
